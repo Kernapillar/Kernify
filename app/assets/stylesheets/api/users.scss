@@ -1,3 +1,14 @@
 // Place all the styles related to the api/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.session-container {
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+    display: flex;
+    width: 75%;
+    flex-direction: column;
+    align-items: center;
+}

@@ -5,7 +5,7 @@ const Greeting = ({ currentUser, logout }) => {
     
     const loginOrSignIn = () => (
         <nav className="login-signup">
-            <Link to="/signup">Sign up</Link>
+            <Link to="/signup">Sign up</Link> or 
             <Link to="/login">Log in</Link>
         </nav>
     );

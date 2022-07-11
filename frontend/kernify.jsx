@@ -5,7 +5,19 @@ import configureStore from './store/store'
 import * as ActionTest from './actions/session_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
-    const store = configureStore();
+    let store;
+if (window.currentUser) {
+    const preloadedState = {
+        entities: {
+        users: { [window.currentUser.id]: window.currentUser }
+        },
+        session: { id: window.currentUser.id }
+    };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+    } else {
+    store = configureStore();
+    }
     const root = document.getElementById("root");
     ReactDOM.render(<Root store={store} />, root);
     
@@ -16,6 +28,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// re-add apiutils to the window for testing
-// figure out why the greetings dont work?
-// finish user auth
+

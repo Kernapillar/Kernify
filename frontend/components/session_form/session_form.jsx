@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this)
         this.swapForm = this.swapForm.bind(this)
+        this.demoLogin = this.demoLogin.bind(this)
 
     };
 
@@ -90,7 +91,7 @@ class SessionForm extends React.Component {
         return (
             <div className="session-container">
                 <h1 className="login-header">To continue, log in to Spotify</h1>
-                <button className="demo-login-button">Demo User</button>
+                <button className="demo-login-button" onClick={this.demoLogin}>Demo User</button>
                 <hr />
                     <form className="session-form-box" onSubmit={this.handleSubmit}>
                         <label> Username
