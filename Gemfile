@@ -50,8 +50,8 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
-  gem 'jquery-rails'
 end
+gem 'jquery-rails'
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
