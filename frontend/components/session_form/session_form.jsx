@@ -11,11 +11,11 @@ class SessionForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.swapForm = this.swapForm.bind(this)
         this.demoLogin = this.demoLogin.bind(this)
+        this.renderErrors = this.renderErrors.bind(this)
 
     };
 
     handleSubmit(e) {
-        console.log(this.state)
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
@@ -42,17 +42,6 @@ class SessionForm extends React.Component {
             )
         }
     }
-    renderErrors = () => {
-        return(
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        )
-    }
 
     update(field) {
         return e => this.setState({
@@ -60,10 +49,23 @@ class SessionForm extends React.Component {
         })
     }
 
+    renderErrors() {
+        return(
+          <ul className="session-errors-list">
+            {this.props.errors.session.map((error, i) => (
+              <li key={`error-${i}`}>
+                {error}
+              </li>
+            ))}
+          </ul>
+        );
+      }
+
     signUpContent() {
         return (
             <div className="session-container">
                 <h1 className="signup-header">Sign up for free to start listening.</h1>
+                {this.renderErrors()}
                     <form className="session-form-box" onSubmit={this.handleSubmit}>
                         <label> What should we call you?
                             <br />
@@ -90,7 +92,8 @@ class SessionForm extends React.Component {
     loginContent() {
         return (
             <div className="session-container">
-                <h1 className="login-header">To continue, log in to Spotify</h1>
+                <h1 className="login-header">To continue, log in to Kernify</h1>
+                {this.renderErrors()}
                 <button className="demo-login-button" onClick={this.demoLogin}>Demo User</button>
                 <hr />
                     <form className="session-form-box" onSubmit={this.handleSubmit}>
