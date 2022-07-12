@@ -32,7 +32,7 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'signup') {
             return(
                 <div>
-                    <span>Have an account? 
+                    <span className="swap-form-text">Have an account? 
                         <Link to="/login">
                             <button className="swap-form">
                             Log in
@@ -44,7 +44,7 @@ class SessionForm extends React.Component {
         } else {
             return (
                 <div>
-                    <span>Don't have an account? 
+                    <span className="swap-form-text">Don't have an account? 
                     <Link to="/signup"> 
                         <button className="swap-form">
                         Sign up for Kernify
