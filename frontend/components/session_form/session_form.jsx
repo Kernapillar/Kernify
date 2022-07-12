@@ -25,20 +25,31 @@ class SessionForm extends React.Component {
     demoLogin(e) {
         e.preventDefault();
         const demoUser = {username: "Demo", password: "123456"}
-        this.props.processForm(demoUser)
+        this.props.submitDemo(demoUser)
     }
 
     swapForm = () => {
         if (this.props.formType === 'signup') {
             return(
                 <div>
-                    <span>Have an account? <Link to="/login">Log in</Link>.</span>
+                    <span>Have an account? 
+                        <Link to="/login">
+                            <button className="swap-form">
+                            Log in
+                            </button>
+                        </Link>
+                        </span>
                 </div>
             )
         } else {
             return (
                 <div>
-                    <span>Don't have an account? <Link to="/signup">Sign in</Link>.</span>
+                    <span>Don't have an account? 
+                    <Link to="/signup"> 
+                        <button className="swap-form">
+                        Sign up for Kernify
+                        </button> 
+                    </Link></span>
                 </div>
             )
         }
@@ -56,6 +67,7 @@ class SessionForm extends React.Component {
             {this.props.errors.session.map((error, i) => (
               <li key={`error-${i}`}>
                 {error}
+                <br />
               </li>
             ))}
           </ul>
@@ -66,21 +78,36 @@ class SessionForm extends React.Component {
         return (
             <div className="session-container">
                 <h1 className="signup-header">Sign up for free to start listening.</h1>
+                <br />
                 {this.renderErrors()}
+                <button className="demo-login-button" onClick={this.demoLogin}>Demo User</button>
+                <div className="or-div"> <hr /> <span id="or-span"> OR </span> <hr /> </div>
                     <form className="session-form-box" onSubmit={this.handleSubmit}>
-                        <label> What should we call you?
+                    <label className="session-label"> What is your email address?
+                            <br />
+                            <input type="text"  placeholder="Enter your email address."
+                            className={'login-input'} />
+                        </label>
+                        <br />
+                        <label className="session-label"> What should we call you?
                             <br />
                             <input type="text" value={this.state.username} placeholder="Enter a profile name."
                             onChange={this.update('username')} className={'login-input'} />
                         </label>
                         <br />
-                        <label> Create a password
+                        <label className="session-label"> Create a password
                             <br />
                             <input type="password" value={this.state.password} placeholder="Create a password."
                             onChange={this.update('password')} className={'login-input'} />
                         </label>
                         <br />
-                        <button type="submit" className={"signup-submit"}>Sign Up</button>
+                        <label className="session-label"> Confirm your password
+                            <br />
+                            <input type="password" placeholder="Enter your password again."
+                            className={'login-input'} />
+                        </label>
+                        <br />
+                        <button type="submit" className={"session-form-submit"}>Sign Up</button>
                     </form>
                     <hr />
 
@@ -94,23 +121,24 @@ class SessionForm extends React.Component {
         return (
             <div className="session-container">
                 <h1 className="login-header">To continue, log in to Kernify</h1>
+                <br />
                 {this.renderErrors()}
                 <button className="demo-login-button" onClick={this.demoLogin}>Demo User</button>
-                <hr />
+                <div className="or-div"> <hr /> <span id="or-span"> OR </span> <hr /> </div>
                     <form className="session-form-box" onSubmit={this.handleSubmit}>
-                        <label> Username
+                        <label className="session-label"> Username
                             <br />
                             <input type="text" value={this.state.username} placeholder="Enter username."
                             onChange={this.update('username')} className={'login-input'} />
                         </label>
                         <br />
-                        <label>Password 
+                        <label className="session-label">Password 
                             <br />
                             <input type="password" value={this.state.password} placeholder="Password."
                             onChange={this.update('password')} className={'login-input'} />
                         </label>
                         <br />
-                        <button type="submit" className={"login-submit"}>Log in</button>
+                        <button type="submit" className={"session-form-submit"}>Log in</button>
                     </form>
                     <hr />
 

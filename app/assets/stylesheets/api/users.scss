@@ -6,9 +6,67 @@
 .session-container {
     margin-left: auto;
     margin-right: auto;
-    align-self: center;
     display: flex;
-    width: 75%;
+    justify-content: center;
+    max-width: 450px;
     flex-direction: column;
+}
+
+#or-span {
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+.session-container h1 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.or-div {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: inline-flex;
+}
+ 
+.demo-login-button {
+    background-color: rgb(60, 90, 150);
+    padding: 10px 30px;
+}
+
+hr {
+    width: 100%;
+}
+
+.session-form-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+.session-label {
+    width: 100%;
+}
+
+input {
+    border: 1px solid black;
+    padding: 12px 0;
+    width: 100%;
+    padding-left: 5px;
+}
+.session-form-submit {
+    background-color: rgb(30, 215, 96);
+    padding: 10px 25px;
+    width: 400px;
+    color: black;
+}
+.swap-form {
+    border: 1px solid grey;
+    background-color: white;
+    padding: 10px 25px;
+    width: 400px;
+    color: grey;
 }

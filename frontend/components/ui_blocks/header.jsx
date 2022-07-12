@@ -4,7 +4,7 @@ import GreetingContainer from "../greeting/greeting_container"
 
 const header = () => (
     <div className="header-topbar">
-        header
+        
         <GreetingContainer />
     </div>
 )
