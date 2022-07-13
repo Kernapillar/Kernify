@@ -6,7 +6,7 @@ class Api::AlbumsController < ApplicationController
     end
 
     def show
-        @album = Album.find_by(params[:id])
+        @album = Album.find(params[:id])
         render :show
     end
 

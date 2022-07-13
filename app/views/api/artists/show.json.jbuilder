@@ -1,5 +1,7 @@
 json.artist do 
-    json.extract! @artist, :id, :name, :bio, :picture_url
+    json.set! @artist.id do
+        json.extract! @artist, :id, :name, :bio, :picture_url
+    end
 end
 
 json.albums do 
@@ -11,7 +13,7 @@ json.albums do
 end
 
 json.tracks do 
-    @artist.tracks.limit(5).each do |track|
+    @artist.preview_tracks.each do |track|
         json.set! track.id do
             json.extract! track, :id, :name, :audio_url, :duration, :album_id, :artist_id
         end

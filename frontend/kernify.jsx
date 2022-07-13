@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root"
 import configureStore from './store/store'
-import * as ActionTest from './actions/session_actions'
+import * as ActionTest from './actions/music_actions'
+
 
 document.addEventListener("DOMContentLoaded", () => {
     let store;
@@ -19,12 +20,17 @@ if (window.currentUser) {
     store = configureStore();
     }
     const root = document.getElementById("root");
-// ReactDOM.render(<h1>its workign</h1>, root);
-
     ReactDOM.render(<Root store={store} />, root);
     
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.fetchAllArtists = ActionTest.fetchAllArtists
+  window.fetchArtist = ActionTest.fetchArtist
+  window.fetchAllAlbums = ActionTest.fetchAllAlbums
+  window.fetchAlbum = ActionTest.fetchAlbum
+  window.fetchAllTracks = ActionTest.fetchAllTracks
+
+
   
 
 });

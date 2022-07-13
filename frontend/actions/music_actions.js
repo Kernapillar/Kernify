@@ -12,18 +12,21 @@ const receiveAllArtists = (artists) => ({
     type: RECEIVE_ALL_ARTISTS,
     artists
 })
-const receiveArtist = (artist) => ({
+const receiveArtist = ({artist, albums, tracks}) => ({
     type: RECEIVE_ARTIST,
-    artist
+    artist, 
+    albums, 
+    tracks
 })
 
 const receiveAllAlbums = (albums) => ({
     type: RECEIVE_ALL_ALBUMS,
     albums
 })
-const receiveAlbum = (album) => ({
+const receiveAlbum = ({album, tracks}) => ({
     type: RECEIVE_ALBUM,
-    album
+    album,
+    tracks
 })
 
 const receiveAllTracks = (tracks) => ({

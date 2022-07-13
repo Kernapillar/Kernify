@@ -4,7 +4,10 @@ class Artist < ApplicationRecord
 
     has_many :albums
 
-    has_many :tracks, 
-    through: :albums,
-    source: :tracks
+    has_many :tracks
+
+
+    def preview_tracks
+        Track.where(artist_id: self.id).limit(5)
+    end
 end
