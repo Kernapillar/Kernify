@@ -10,10 +10,14 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
 
+ *= require api/reset
+ *= require api/home
+ *= require api/users
+ *= require api/card
  *= require_self
  */
  
-@import "./api/reset.css";
-@import "./api/home.scss";
-@import "./api/users.scss";
-@import "./api/card.scss";
+/* @import "./api/reset.css"
+@import "./api/home.scss
+@import "./api/users.scss"
+@import "./api/card.scss" */
