@@ -14,7 +14,11 @@ class ArtistIndex extends React.Component {
     }
 
     render() {
-        return (cardIndex(this.props.artists, "artist", true))
+        if (!this.props.artists) {
+            return null
+        } else {
+            return (cardIndex(this.props.artists, "artist", true))
+        }
     }
 }
 
