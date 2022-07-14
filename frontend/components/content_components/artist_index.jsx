@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CardIndexItem from "./card_index_item";
+import cardIndex from "./card_index";
 
 
 class ArtistIndex extends React.Component {
@@ -9,17 +11,10 @@ class ArtistIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchAllArtists();
-        console.log("after mounting: ",this.props)
     }
 
     render() {
-        return (
-        
-            <ul>
-                {this.props.artists.map(artist => <li> {artist.name}</li>)}
-
-            </ul>
-        )
+        return    cardIndex(this.props.artists, "artist", true)
     }
 }
 

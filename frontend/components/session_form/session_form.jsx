@@ -8,7 +8,6 @@ class SessionForm extends React.Component {
             username: "", 
             password: ""
         };
-        console.log(this.props)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.swapForm = this.swapForm.bind(this)
         this.demoLogin = this.demoLogin.bind(this)

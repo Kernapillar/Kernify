@@ -8,10 +8,6 @@ import Home from "./home"
 
 const App = () => (
     <>
-        {/* <header>
-            <h1>KERNAPILLAR</h1>
-            <GreetingContainer />
-        </header> */}
         <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
@@ -19,7 +15,7 @@ const App = () => (
             <ProtectedRoute exact path="/" component={Home}></ProtectedRoute>
 
         </Switch>
-
+    
     </>
 )
 

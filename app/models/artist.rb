@@ -10,4 +10,5 @@ class Artist < ApplicationRecord
     def preview_tracks
         Track.where(artist_id: self.id).limit(5)
     end
+    
 end

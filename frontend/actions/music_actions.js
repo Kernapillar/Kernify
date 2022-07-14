@@ -23,8 +23,9 @@ const receiveAllAlbums = (albums) => ({
     type: RECEIVE_ALL_ALBUMS,
     albums
 })
-const receiveAlbum = ({album, tracks}) => ({
+const receiveAlbum = ({ artist, album, tracks }) => ({
     type: RECEIVE_ALBUM,
+    artist,
     album,
     tracks
 })
