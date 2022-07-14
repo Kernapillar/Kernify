@@ -8,7 +8,7 @@ class CardIndexItem extends React.Component {
 
 
     cardPicture () {
-        if (this.props.cardType === "artjist") {
+        if (this.props.cardType === "artist") {
             return (
                 <img className="card-picture artist-card-pic" src={dark_side} alt="card picture" />
             )

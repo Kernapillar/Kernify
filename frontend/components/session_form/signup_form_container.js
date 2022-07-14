@@ -8,7 +8,7 @@ const mSTP = (state, ownProps)=> {
     })
 }
 
-const mDTP = (dispatch, ownProps) => {
+const mDTP = (dispatch) => {
     return ({
         processForm: (user) => dispatch(signup(user)),
         submitDemo: (user) => dispatch(login(user))
