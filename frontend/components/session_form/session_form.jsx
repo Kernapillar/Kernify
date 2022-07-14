@@ -12,8 +12,11 @@ class SessionForm extends React.Component {
         this.swapForm = this.swapForm.bind(this)
         this.demoLogin = this.demoLogin.bind(this)
         this.renderErrors = this.renderErrors.bind(this)
-
     };
+    
+    componentWillUnmount() {
+        this.props.clearSessionErrors();
+    }
 
     handleSubmit(e) {
         e.preventDefault();

@@ -25,6 +25,11 @@ export const receiveErrors = (errors) => ({
     errors
 })
 
+export const clearSessionErrors = () => ({
+    type: CLEAR_SESSION_ERRORS
+})
+
+
 export const login = (user) => dispatch => {
     return APIUtil.login(user)
     .then(user => dispatch(receiveCurrentUser(user)), error => (dispatch(receiveErrors(error.responseJSON))))
