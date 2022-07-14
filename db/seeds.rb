@@ -6,19 +6,30 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-import dark_side from "app/assets/images"
+
+
+User.destroy_all
+ActiveRecord:: Base.connection.reset_pk_sequence!('users')
+Artist.destroy_all
+ActiveRecord:: Base.connection.reset_pk_sequence!('artists')
+User.destroy_all
+ActiveRecord:: Base.connection.reset_pk_sequence!('users')
+Album.destroy_all
+ActiveRecord:: Base.connection.reset_pk_sequence!('albums')
+Track.destroy_all
+ActiveRecord:: Base.connection.reset_pk_sequence!('tracks')
 
 # user Seed
 demo_user = User.create(username: "Demo", password: "123456")
 
 # artist seeds
-artist1 = Artist.create(name: "Red Hot Chili Peppers", bio: "theyre red hot", picture_url: dark_side)
+artist1 = Artist.create(name: "Red Hot Chili Peppers", bio: "theyre red hot", picture_url: "picture")
 
-artist2 = Artist.create(name: "Portugal. The Man", bio: "is it a place, a person or a band?", picture_url: dark_side)
+artist2 = Artist.create(name: "Portugal. The Man", bio: "is it a place, a person or a band?", picture_url: "picture")
 
-artist3 = Artist.create(name: "Tycho", bio: "words cannot describe...", picture_url: dark_side)
+artist3 = Artist.create(name: "Tycho", bio: "words cannot describe...", picture_url: "picture")
 
-artist4 = Artist.create(name: "Phoenix", bio: "cool and French I think?", picture_url: dark_side)
+artist4 = Artist.create(name: "Phoenix", bio: "cool and French I think?", picture_url: "picture")
 
 
 
