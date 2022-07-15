@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import Root from "./components/root"
 import configureStore from './store/store'
 import * as ActionTest from './actions/music_actions'
+// import '../node_modules/font-awesome/css/font-awesome.min.css'; 
+// import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 document.addEventListener("DOMContentLoaded", () => {

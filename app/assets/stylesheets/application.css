@@ -14,9 +14,10 @@
  *= require api/home
  *= require api/users
  *= require api/card
+ *= require api/tracks
  *= require_self
  */
- 
+
 /* @import "./api/reset.css"
 @import "./api/home.scss
 @import "./api/users.scss"
