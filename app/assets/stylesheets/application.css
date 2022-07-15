@@ -22,3 +22,7 @@
 @import "./api/home.scss
 @import "./api/users.scss"
 @import "./api/card.scss" */
+
+body {
+    overscroll-behavior-y: none;
+}

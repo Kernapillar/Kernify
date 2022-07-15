@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CardIndexItem from "./card_index_item";
-import cardIndex from "./card_index";
+import CardIndex from "./card_index";
 
 
 class ArtistIndex extends React.Component {
@@ -17,7 +17,7 @@ class ArtistIndex extends React.Component {
         if (!this.props.artists) {
             return null
         } else {
-            return (cardIndex(this.props.artists, "artist", true))
+            return (CardIndex(this.props.artists, "artist", true))
         }
     }
 }

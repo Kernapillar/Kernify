@@ -3,9 +3,7 @@ import TrackIndexItem from "./track_index_item";
 
 class TrackIndex extends React.Component {
 
-    componentDidMount(){
-        this.props.fetchAlbum(6);
-    }
+    
 
     render() {
         if (!this.props.tracks) {

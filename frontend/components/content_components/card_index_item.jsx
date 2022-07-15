@@ -4,6 +4,7 @@ import dark_side from "../../../app/assets/images/dark_side.jpeg"
 class CardIndexItem extends React.Component {
     constructor(props){
         super(props)
+        console.log("this is what the card item props looks like",this.props)
     }
 
 
@@ -35,10 +36,10 @@ class CardIndexItem extends React.Component {
             return (
                 <div className="card-text">
                     <p className="card-title">
-                        {this.props.album.title}
+                        {this.props.media.title}
                     </p>
                     <p className="card-subtitle">
-                       {this.props.media.name}
+                    {this.props.artist.name}                    
                     </p>
                 </div>
             )
@@ -59,12 +60,18 @@ class CardIndexItem extends React.Component {
     
 
     render() {
+        // console.log("Card index item props", this.props)
+        if (!this.props.artist) {
+            return null
+        } else {
         return (
             <div className={`card ${this.props.cardType}`}>
                     {this.cardPicture()}
                     {this.cardText()}
             </div>
-        )
+             )
+        }    
+       
     }
 }
 
