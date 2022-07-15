@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class TrackIndexItem extends React.Component {
     constructor(props){
@@ -35,7 +36,11 @@ class TrackIndexItem extends React.Component {
                     </div>
                     <div className="track-text">
                         <p className="track-title">{this.props.track.name}</p>
-                        <p className="track-subtitle">{this.props.artist[this.props.track.artist_id].name}</p>
+                        <p className="track-subtitle">
+                            <Link to={`/artists/${this.props.track.artist_id}`}>
+                                {this.props.artist[this.props.track.artist_id].name}
+                            </Link>
+                        </p>
                     </div>
 
                 </div>

@@ -45,6 +45,9 @@
 .track-subtitle {
     color: rgb(170, 170, 170);
 }
+.track-subtitle:hover {
+    text-decoration: underline;
+}
 
 .track-item-right {
     display: flex;
