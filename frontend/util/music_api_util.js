@@ -34,3 +34,9 @@ export const fetchAllTracks = () => {
     })
 }
 
+export const fetchHome = () => {
+    return $.ajax({
+        url: `api/home`,
+        method: "GET"
+    })
+}

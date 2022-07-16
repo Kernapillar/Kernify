@@ -16,8 +16,8 @@ const CardIndex = (props) => {
             <div className="card-grid">
                 {/* if breaks check artist prop threading here! */}
                 {props.mediaArr.map(media => 
-                <Link to={`/${props.cardType}s/${(media.id)}`}>
-                    <CardIndexItem key={media.id} artist={props.artist} media={media} cardType={`${props.cardType}`} />
+                <Link to={`/${props.cardType}s/${(media.id)}`} key={`linkKey-${media.id}`}>
+                    <CardIndexItem key={`${props.cardType}-${media.id}`} artist={props.artist} media={media} cardType={`${props.cardType}`} />
                 </Link>
                 )}
             </div>

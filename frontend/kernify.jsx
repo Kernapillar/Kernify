@@ -31,6 +31,7 @@ if (window.currentUser) {
   window.fetchAllAlbums = ActionTest.fetchAllAlbums
   window.fetchAlbum = ActionTest.fetchAlbum
   window.fetchAllTracks = ActionTest.fetchAllTracks
+  window.fetchHome = ActionTest.fetchHome
 
 
   

@@ -1,5 +1,7 @@
 import * as MusicAPI from "../util/music_api_util"
 
+export const RECEIVE_HOME_PAGE = "RECEIVE_HOME_PAGE";
+
 export const RECEIVE_ALL_ARTISTS = "RECEIVE_ALL_ARTISTS";
 export const RECEIVE_ARTIST = "RECEIVE_ARTIST";
 
@@ -7,6 +9,13 @@ export const RECEIVE_ALL_ALBUMS = "RECEIVE_ALL_ALBUMS";
 export const RECEIVE_ALBUM = "RECEIVE_ALBUM";
 
 export const RECEIVE_ALL_TRACKS = "RECEIVE_ALL_TRACKS";
+
+const receiveHomePage = ({artists, albums, playlists}) => ({
+    type: RECEIVE_HOME_PAGE,
+    artists, 
+    albums, 
+    playlists
+})
 
 const receiveAllArtists = (artists) => ({
     type: RECEIVE_ALL_ARTISTS,
@@ -34,6 +43,12 @@ const receiveAllTracks = (tracks) => ({
     type: RECEIVE_ALL_TRACKS,
     tracks
 })
+
+export const fetchHome = () => dispatch => {
+    MusicAPI.fetchHome()
+    .then(payload => dispatch(receiveHomePage(payload)))
+}
+
 
 export const fetchAllArtists = () => dispatch => {
     return MusicAPI.fetchAllArtists()

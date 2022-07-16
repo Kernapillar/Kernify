@@ -5,7 +5,7 @@ import SideBar from "./ui_blocks/sidebar";
 import MusicPlayer from "./ui_blocks/music_player";
 
 
-const Home = () => (
+const HomeBlocks = () => (
     <div className="home-container">
         <Header />
         <SideBar />
@@ -15,4 +15,4 @@ const Home = () => (
 
 )
 
-export default Home;
+export default HomeBlocks;

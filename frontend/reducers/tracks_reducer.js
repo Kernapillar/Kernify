@@ -1,7 +1,8 @@
 import {
     RECEIVE_ALL_TRACKS,
     RECEIVE_ALBUM,
-    RECEIVE_ARTIST
+    RECEIVE_ARTIST, 
+    RECEIVE_HOME_PAGE
 } from '../actions/music_actions'
 
 
@@ -14,6 +15,8 @@ const tracksReducer = (state = {}, action) => {
             return action.tracks;
         case RECEIVE_ALBUM:
             return action.tracks;
+        case RECEIVE_HOME_PAGE:
+            return {}
         default:
             return state;
     }

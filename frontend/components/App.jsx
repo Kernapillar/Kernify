@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormContainer from "./session_form/login_form_container";
 import SignupFormContainer from "./session_form/signup_form_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import Home from "./home"
+import HomeBlocks from "./home_blocks"
 
 
 const App = () => (
@@ -12,7 +12,7 @@ const App = () => (
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             
-            <ProtectedRoute path="/" component={Home}/>
+            <ProtectedRoute path="/" component={HomeBlocks}/>
 
         </Switch>
     
