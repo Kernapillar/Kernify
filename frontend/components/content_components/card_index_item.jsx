@@ -36,7 +36,7 @@ class CardIndexItem extends React.Component {
             return (
                 <div className="card-text">
                     <p className="card-title">
-                        {this.props.media.title}
+                        {this.props.media.name}
                     </p>
                     <p className="card-subtitle">
                     {this.props.artist.name}                    
@@ -47,7 +47,7 @@ class CardIndexItem extends React.Component {
             return (
                 <div className="card-text">
                     <p className="card-title">
-                        {this.props.playlist.title}
+                        {this.props.playlist.name}
                     </p>
                     <p className="card-subtitle">
                        By {this.props.user.username}

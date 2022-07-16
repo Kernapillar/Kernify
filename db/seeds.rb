@@ -35,15 +35,15 @@ artist4 = Artist.create(name: "Phoenix", bio: "cool and French I think?", pictur
 
 # album seeds
 
-album1 = Album.create(title: "Californiaction", year: 1999, picture_url: "insert picture here", artist_id: 1)
-album2 = Album.create(title: "Stadium Arcadium", year: 2006, picture_url: "insert picture here", artist_id: 1)
+album1 = Album.create(name: "Californiaction", year: 1999, picture_url: "insert picture here", artist_id: 1)
+album2 = Album.create(name: "Stadium Arcadium", year: 2006, picture_url: "insert picture here", artist_id: 1)
 
-album3 = Album.create(title: "In the Mountain in the Cloud", year: 2011, picture_url: "insert picture here", artist_id: 2)
-album4 = Album.create(title: "The Satanic Satanist", year: 2009, picture_url: "insert picture here", artist_id: 2)
+album3 = Album.create(name: "In the Mountain in the Cloud", year: 2011, picture_url: "insert picture here", artist_id: 2)
+album4 = Album.create(name: "The Satanic Satanist", year: 2009, picture_url: "insert picture here", artist_id: 2)
 
-album5 = Album.create(title: "Dive", year: 2011, picture_url: "insert picture here", artist_id: 3)
+album5 = Album.create(name: "Dive", year: 2011, picture_url: "insert picture here", artist_id: 3)
 
-album6 = Album.create(title: "Wolfgang Amadeus Phoenix", year: 2009, picture_url: "insert picture here", artist_id: 4)
+album6 = Album.create(name: "Wolfgang Amadeus Phoenix", year: 2009, picture_url: "insert picture here", artist_id: 4)
 
 
 

@@ -1,6 +1,6 @@
 class Album < ApplicationRecord
-    validates :title, :year, :picture_url, :artist_id, presence: true
-    validates :title, uniqueness: true 
+    validates :name, :year, :picture_url, :artist_id, presence: true
+    validates :name, uniqueness: true 
 
     belongs_to :artist
 
