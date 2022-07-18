@@ -4,7 +4,7 @@ import dark_side from "../../../../app/assets/images/dark_side.jpeg"
 class CardIndexItem extends React.Component {
     constructor(props){
         super(props)
-        // console.log("this is what the card item props looks like",this.props.media)
+        console.log("this is what the card item props looks like",this.props.media)
     }
 
 
@@ -15,7 +15,7 @@ class CardIndexItem extends React.Component {
             )
         } else {
             return (
-                <img className="card-picture" src={dark_side} alt="card picure" />
+                <img className="card-picture" src={ this.props.media.pictureUrl ? this.props.media.pictureUrl : dark_side} alt="card picure" />
             )
         }
     }

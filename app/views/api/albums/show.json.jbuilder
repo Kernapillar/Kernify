@@ -1,6 +1,9 @@
 json.album do 
     json.set! @album.id do
-        json.extract! @album, :id, :name, :year, :picture_url, :artist_id
+        json.extract! @album, :id, :name, :year, :artist_id 
+        if @album.picture_url.attached? 
+            json.pictureUrl url_for(@album.picture_url)
+        end        
         json.artist @album.artist.name
     end
 end

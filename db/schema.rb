@@ -10,15 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_17_174348) do
+ActiveRecord::Schema.define(version: 2022_07_18_224650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
   create_table "albums", force: :cascade do |t|
     t.string "name", null: false
     t.integer "year", null: false
-    t.string "picture_url", null: false
     t.integer "artist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -28,7 +48,6 @@ ActiveRecord::Schema.define(version: 2022_07_17_174348) do
   create_table "artists", force: :cascade do |t|
     t.string "name", null: false
     t.text "bio"
-    t.string "picture_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_artists_on_name", unique: true
@@ -45,7 +64,6 @@ ActiveRecord::Schema.define(version: 2022_07_17_174348) do
   create_table "playlists", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
-    t.string "picture_url", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,7 +72,6 @@ ActiveRecord::Schema.define(version: 2022_07_17_174348) do
 
   create_table "tracks", force: :cascade do |t|
     t.string "name", null: false
-    t.string "audio_url", null: false
     t.string "duration"
     t.integer "album_id", null: false
     t.integer "artist_id", null: false
@@ -72,4 +89,5 @@ ActiveRecord::Schema.define(version: 2022_07_17_174348) do
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
 end

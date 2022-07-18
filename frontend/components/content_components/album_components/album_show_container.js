@@ -2,11 +2,11 @@ import { connect } from "react-redux";
 import AlbumShow from "./album_show";
 import { fetchAlbum } from "../../../actions/music_actions"
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
     return ({
         tracks: Object.values(state.entities.tracks),
         artist: state.entities.artists,
-        album: state.entities.album
+        album: state.entities.albums[ownProps.match.params.albumId]
     })
 }
 

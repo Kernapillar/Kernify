@@ -11,7 +11,17 @@ class AlbumShow extends React.Component {
     }
 
     render() {
-        return <TrackIndex tracks={this.props.tracks} artist={this.props.tracks.artist} album={this.props.album}/>
+        if (!this.props.tracks || !this.props.album) {
+            return null
+        } else {
+            console.log("albumnamehere = ", this.props)
+            return (
+                <>
+                    <h1>{this.props.album.name}</h1>  
+                    <TrackIndex tracks={this.props.tracks} artist={this.props.tracks.artist} album={this.props.album}/>
+                </>
+            )
+        }
     }
 }
 

@@ -6,6 +6,7 @@ class Artist < ApplicationRecord
 
     has_many :tracks
 
+    has_one_attached :picture_url
 
     def preview_tracks
         Track.where(artist_id: self.id).limit(5)

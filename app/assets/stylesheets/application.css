@@ -16,6 +16,7 @@
  *= require api/users
  *= require api/card
  *= require api/tracks
+ *= require api/dropdown
  *= require_self
  */
 
