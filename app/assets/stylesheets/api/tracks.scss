@@ -25,8 +25,10 @@
 
 .track-item-left {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
+    width: 200px;
+
 }
  
 
@@ -43,6 +45,11 @@
 }
 
 .track-subtitle {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
     color: rgb(170, 170, 170);
 }
 .track-subtitle:hover {
@@ -72,4 +79,25 @@
 .track-list-hr {
     border-color: rgb(170, 170, 170);
     margin-bottom: 20px;
+}
+.track-album-link {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 200px;
+}
+
+.album-link-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+}
+
+.track-album-header {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }

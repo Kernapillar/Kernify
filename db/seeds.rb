@@ -87,3 +87,33 @@ track26 = Track.create(name: "Rome", audio_url: "audio path here", duration: "1:
 track27 = Track.create(name: "Countdown", audio_url: "audio path here", duration: "1:00", album_id: 6, artist_id: 4)
 track28 = Track.create(name: "Girlfriend", audio_url: "audio path here", duration: "1:00", album_id: 6, artist_id: 4)
 track29 = Track.create(name: "Armistice", audio_url: "audio path here", duration: "1:00", album_id: 6, artist_id: 4)
+
+
+# Playlist Seeds
+
+playlist1 = Playlist.create(name: "testPlaylist1", description: "idk lets see if it works", picture_url: "picture here", user_id: 1)
+playlist2 = Playlist.create(name: "Yellow Mild Banana Peppers", description: "not super loud peppers", picture_url: "picture here", user_id: 1)
+playlist3 = Playlist.create(name: "instrumental", description: "its got no words", picture_url: "picture here", user_id: 1)
+
+# Playlist Item Seeds
+
+    # playlist 1
+PlaylistItem1 = PlaylistItem.create(playlist_id: 1, track_id: 1)
+PlaylistItem2 = PlaylistItem.create(playlist_id: 1, track_id: 5)
+PlaylistItem3 = PlaylistItem.create(playlist_id: 1, track_id: 10)
+PlaylistItem4 = PlaylistItem.create(playlist_id: 1, track_id: 15)
+PlaylistItem5 = PlaylistItem.create(playlist_id: 1, track_id: 20)
+
+    # playlist 2
+PlaylistItem6 = PlaylistItem.create(playlist_id: 2, track_id: 1)
+PlaylistItem7 = PlaylistItem.create(playlist_id: 2, track_id: 3)
+PlaylistItem8 = PlaylistItem.create(playlist_id: 2, track_id: 5)
+PlaylistItem9 = PlaylistItem.create(playlist_id: 2, track_id: 7)
+PlaylistItem10 = PlaylistItem.create(playlist_id: 2, track_id: 8)
+
+    # playlist 3
+PlaylistItem11 = PlaylistItem.create(playlist_id: 3, track_id: 1)
+PlaylistItem12 = PlaylistItem.create(playlist_id: 3, track_id: 5)
+PlaylistItem13 = PlaylistItem.create(playlist_id: 3, track_id: 10)
+PlaylistItem14 = PlaylistItem.create(playlist_id: 3, track_id: 15)
+PlaylistItem15 = PlaylistItem.create(playlist_id: 3, track_id: 20)

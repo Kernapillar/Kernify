@@ -9,7 +9,7 @@ import {
 const artistsReducer = (state = {}, action) => {
     Object.freeze(state);
     // const nextState = Object.assign({}, state)
-    console.log(action)
+    // console.log(action)
     const nextState = {};
     switch (action.type) {
         case RECEIVE_ALL_ARTISTS:
@@ -17,7 +17,7 @@ const artistsReducer = (state = {}, action) => {
         case RECEIVE_ARTIST:
             return action.artist
         case RECEIVE_ALBUM:
-            return action.artist
+            return state
         case RECEIVE_HOME_PAGE:
             return action.artists
         default:

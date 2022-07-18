@@ -13,14 +13,11 @@ class AlbumIndex extends React.Component {
         }
 
     render() {
-        console.log("album index props sending to cardindex",this.props)
         if (!this.props.albums[0]) {
             return null
         } else {
             return <>
-            
-            <CardIndex mediaArr={this.props.albums} cardType={"album"} preview={false} />
-            
+                <CardIndex mediaArr={this.props.albums} cardType={"album"} preview={false} />
             </>
         }
     }

@@ -15,11 +15,12 @@
     border-radius: 10px;
     width: 185px;
     padding: 15px;
-    height: 265px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: left;
+    
 }
 .card:hover {
     background-color: rgb(40, 40, 40);
@@ -28,9 +29,19 @@
 .card-title  {
     font-weight: bold;
     margin-bottom: 5px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
 }
 
 .card-subtitle {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
     color: rgb(170, 170, 170);
 }
 

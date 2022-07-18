@@ -13,8 +13,8 @@ class HomeIndex extends React.Component {
         }
 
     render() {
-        console.log(" home index props sending to cardindex",this.props)
-        if (!this.props.albums[0] || !this.props.artists[0]) {
+        // console.log(" home index props sending to cardindex",this.props)
+        if (!this.props.albums[0] || !this.props.artists[0] || !this.props.playlists[0]) {
             return null
         } else {
             return <>
@@ -31,7 +31,11 @@ class HomeIndex extends React.Component {
                 </span>
                 <br />
                 <CardIndex mediaArr={this.props.albums} cardType={"album"} preview={true} />
-
+                <span className="home-preview-header">
+                    <h3>Paylists</h3> <Link to="/playlists"><p className="see-all">SEE ALL</p></Link> 
+                </span>
+                <br />
+                <CardIndex mediaArr={this.props.playlists} cardType={"playlist"} preview={true} />
             </> 
         }
     }

@@ -11,7 +11,13 @@ class TrackIndexItem extends React.Component {
         this.onMouseOffHandler = this.onMouseOffHandler.bind(this);
     }
 
-    
+    albumLinkRender = () => {
+        if (this.props.trackType === "playlist" ) {
+            return <Link className="album-link-text" to={`/albums/${this.props.track.album_id}`}>
+            {this.props.album}
+        </Link>
+        }
+    }
 
     onMouseEnterHandler () {
         this.setState({
@@ -25,6 +31,7 @@ class TrackIndexItem extends React.Component {
     }
     
     render(){
+        // console.log("trackIndexItem props for album", this.props)
         return (
             <li className="track-item" 
             onMouseOver={this.onMouseEnterHandler} 
@@ -38,12 +45,14 @@ class TrackIndexItem extends React.Component {
                         <p className="track-title">{this.props.track.name}</p>
                         <p className="track-subtitle">
                             <Link to={`/artists/${this.props.track.artist_id}`}>
-                                {this.props.artist[this.props.track.artist_id].name}
+                                {this.props.artist}
                             </Link>
                         </p>
                     </div>
-
                 </div>
+                <p className="track-album-link track-subtitle">
+                    {this.albumLinkRender()}
+                </p> 
                 <div className="track-item-right">
                     <div className="track-right-hoverables">
                         {this.state.isHovering ? <i className="fa fa-heart"></i> :"" }

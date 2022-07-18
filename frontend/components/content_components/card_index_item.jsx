@@ -4,7 +4,7 @@ import dark_side from "../../../app/assets/images/dark_side.jpeg"
 class CardIndexItem extends React.Component {
     constructor(props){
         super(props)
-        console.log("this is what the card item props looks like",this.props.media)
+        // console.log("this is what the card item props looks like",this.props.media)
     }
 
 
@@ -33,7 +33,6 @@ class CardIndexItem extends React.Component {
                 </div>
             )
         } else if (this.props.cardType === 'album') {
-            console.log("media peek for album index: ", this.props)
             return (
                 <div className="card-text">
                     <p className="card-title">
@@ -45,13 +44,14 @@ class CardIndexItem extends React.Component {
                 </div>
             )
         } else {
+            console.log("media peek for playlist: ", this.props)
             return (
                 <div className="card-text">
                     <p className="card-title">
-                        {this.props.playlist.name}
+                        {this.props.media.name}
                     </p>
                     <p className="card-subtitle">
-                       By {this.props.user.username}
+                       By {this.props.media.user}
                     </p>
                 </div>
             ) 
@@ -61,7 +61,7 @@ class CardIndexItem extends React.Component {
     
 
     render() {
-        console.log("Card index item props", this.props)
+        // console.log("Card index item props", this.props)
         if (!this.props.media) {
             return null
         } else {

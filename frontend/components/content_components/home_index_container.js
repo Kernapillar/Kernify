@@ -5,8 +5,8 @@ import { fetchHome } from "../../actions/music_actions"
 const mSTP = (state) => {
     return ({
         albums: Object.values(state.entities.albums), 
-        artists: Object.values(state.entities.artists)
-        // todo: add Playlists!
+        artists: Object.values(state.entities.artists), 
+        playlists: Object.values(state.entities.playlists)
 
     })
 }

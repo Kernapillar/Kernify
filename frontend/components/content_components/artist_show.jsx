@@ -10,12 +10,12 @@ class ArtistShow extends React.Component {
     
 
     render() {
-        console.log("props artist show page: ", this.props)
+        // console.log("props artist show page: ", this.props)
 
         if (!this.props.artist || !this.props.albums) {
             return null
         } else {
-            console.log("look at me!", this.props.artist)
+            // console.log("look at me!", this.props.artist)
             return <CardIndex mediaArr={this.props.albums} cardType={"album"} preview={false} 
             artist={this.props.artist[this.props.match.params.artistId]}/>  
 

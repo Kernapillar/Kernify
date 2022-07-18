@@ -4,6 +4,7 @@ import {
     RECEIVE_ARTIST, 
     RECEIVE_HOME_PAGE
 } from '../actions/music_actions'
+import { RECEIVE_PLAYLIST } from '../actions/playlist_actions';
 
 
 const tracksReducer = (state = {}, action) => {
@@ -17,6 +18,11 @@ const tracksReducer = (state = {}, action) => {
             return action.tracks;
         case RECEIVE_HOME_PAGE:
             return {}
+        case RECEIVE_PLAYLIST:
+            if (action.tracks){
+                return action.tracks
+            }
+            return state
         default:
             return state;
     }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_16_001002) do
+ActiveRecord::Schema.define(version: 2022_07_17_174348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,9 +37,9 @@ ActiveRecord::Schema.define(version: 2022_07_16_001002) do
   create_table "playlist_items", force: :cascade do |t|
     t.integer "playlist_id", null: false
     t.integer "track_id", null: false
-    t.integer "position", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["playlist_id", "track_id"], name: "index_playlist_items_on_playlist_id_and_track_id", unique: true
   end
 
   create_table "playlists", force: :cascade do |t|

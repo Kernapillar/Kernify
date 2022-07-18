@@ -10,7 +10,7 @@ const CardIndex = (props) => {
         className = "index"
     }
         
-    console.log("cardindex props: ", props)
+    // console.log("cardindex props: ", props)
     return (
         <div className={`${className}`}>
             <div className="card-grid">

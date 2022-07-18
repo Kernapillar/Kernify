@@ -13,7 +13,7 @@ class ArtistIndex extends React.Component {
         }
 
     render() {
-        console.log("artist index props sending to cardindex",this.props)
+        // console.log("artist index props sending to cardindex",this.props)
         if (!this.props.artists[0]) {
             return null
         } else {

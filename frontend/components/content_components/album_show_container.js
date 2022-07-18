@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import AlbumShow from "./album_show";
 import { fetchAlbum } from "../../actions/music_actions"
-import { withRouter } from "react-router-dom";
 
 const mSTP = (state) => {
     return ({

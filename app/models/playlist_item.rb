@@ -1,5 +1,8 @@
 class PlaylistItem < ApplicationRecord
 
+    validates :playlist_id, :track_id, presence: true
 
-    # FILL ME!!!!
+    belongs_to :playlist
+    belongs_to :track
+
 end
