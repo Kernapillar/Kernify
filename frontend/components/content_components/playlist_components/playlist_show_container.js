@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import PlaylistShow from "./playlist_show"
-import { fetchPlaylist } from "../../actions/playlist_actions";
+import { fetchPlaylist } from "../../../actions/playlist_actions";
 
 const mSTP = (state) => {
     return ({

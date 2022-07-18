@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import AlbumIndex from "./album_index";
-import { fetchAllAlbums } from "../../actions/music_actions"
+import { fetchAllAlbums } from "../../../actions/music_actions"
 
 const mSTP = (state) => {
     return ({

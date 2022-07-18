@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CardIndex from "./card_index";
+import CardIndex from "../card_components/card_index";
 
 
 class ArtistIndex extends React.Component {

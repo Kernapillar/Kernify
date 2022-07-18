@@ -1,5 +1,5 @@
 import React from "react";
-import TrackIndex from "./track_index";
+import TrackIndex from "../track_components/track_index";
 
 class PlaylistShow extends React.Component {
 

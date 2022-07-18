@@ -1,5 +1,5 @@
 import React from "react";
-import CardIndex from "./card_index";
+import CardIndex from "../card_components/card_index";
 
 class ArtistShow extends React.Component {
 

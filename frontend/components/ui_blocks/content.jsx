@@ -1,13 +1,13 @@
 import React from "react";
-import ArtistIndexContainer from "../content_components/artist_index_container";
-import TrackIndexContainer from "../content_components/track_index_container";
+import ArtistIndexContainer from "../content_components/artist_components/artist_index_container";
+import TrackIndexContainer from "../content_components/track_components/track_index_container";
 import { Route, Switch } from "react-router-dom";
 import HomeIndexContainer from "../content_components/home_index_container"
-import AlbumShowContainer from "../content_components/album_show_container";
-import ArtistShowContainer from "../content_components/artist_show_container";
-import AlbumIndexContainer from "../content_components/album_index_container";
-import PlaylistIndexContainer from "../content_components/playlist_index_container"
-import PlaylistShowContainer from "../content_components/playlist_show_container"
+import AlbumShowContainer from "../content_components/album_components/album_show_container";
+import ArtistShowContainer from "../content_components/artist_components/artist_show_container";
+import AlbumIndexContainer from "../content_components/album_components/album_index_container";
+import PlaylistIndexContainer from "../content_components/playlist_components/playlist_index_container"
+import PlaylistShowContainer from "../content_components/playlist_components/playlist_show_container"
 
 const Content = () => (
     <div className="content-block">

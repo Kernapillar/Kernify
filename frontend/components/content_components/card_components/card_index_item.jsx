@@ -1,5 +1,5 @@
 import React from "react";
-import dark_side from "../../../app/assets/images/dark_side.jpeg"
+import dark_side from "../../../../app/assets/images/dark_side.jpeg"
 
 class CardIndexItem extends React.Component {
     constructor(props){
