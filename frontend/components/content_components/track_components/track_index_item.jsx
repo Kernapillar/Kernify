@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import TrackDropdownContainer from "../../dropdown_components/track_options_dropdown_container";
 
 class TrackIndexItem extends React.Component {
     constructor(props){
@@ -59,7 +60,9 @@ class TrackIndexItem extends React.Component {
                     </div>
                     <p>{this.props.track.duration}</p>
                     <div className="track-right-hoverables">
-                        {this.state.isHovering ? <i className="fa fa-ellipsis-h"></i> :"" }
+                        {this.state.isHovering ? 
+                        <TrackDropdownContainer  />  
+                        :"" }
                     </div>                    
                 </div>
             </li>

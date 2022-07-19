@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import UserDropdown from "../dropdown_components/user_dropdown";
 
 const Greeting = ({ currentUser, logout }) => {
     
     return (
         <div className='logout-container' >
-            <button className="logout-button" onClick={logout}>Log Out</button>
+            <UserDropdown button={`${currentUser.username}`} logout={logout}/>
         </div>
     )
 }
