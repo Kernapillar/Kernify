@@ -4,10 +4,13 @@ import TrackIndex from "../track_components/track_index";
 class PlaylistShow extends React.Component {
 
     componentDidMount(){
-        this.props.fetchPlaylist(this.props.match.params.playlistId)
+        this.props.fetchPlaylist(this.props.match.params.playlistId);
+        this.props.fetchAllPlaylists();
+
     }
 
     render() {
+        // console.log("PSKLDJFSLIDHJFSD", this.props) 
         if (!this.props.tracks[0]) {
             return null
         } else {

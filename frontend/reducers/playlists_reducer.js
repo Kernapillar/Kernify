@@ -12,8 +12,8 @@ const playlistReducer = (state = {}, action) => {
             return action.playlists;   
         case RECEIVE_HOME_PAGE:
             return action.playlists
-        case RECEIVE_PLAYLIST:
-            return action.playlist; 
+        // case RECEIVE_PLAYLIST:
+        //     return action.playlist; 
         case REMOVE_PLAYLIST:
             const nextState = Object.assign({}, state);
             delete nextState[action.eventId]

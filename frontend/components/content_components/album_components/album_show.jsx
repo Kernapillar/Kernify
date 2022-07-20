@@ -4,17 +4,14 @@ import TrackIndex from "../track_components/track_index";
 class AlbumShow extends React.Component {
 
     componentDidMount(){
-        this.props.fetchAlbum(this.props.match.params.albumId).then(
-
-            console.log("props: ", this.props)
-        )
+        this.props.fetchAlbum(this.props.match.params.albumId)
+        this.props.fetchAllPlaylists();
     }
 
     render() {
         if (!this.props.tracks || !this.props.album) {
             return null
         } else {
-            console.log("albumnamehere = ", this.props)
             return (
                 <>
                     <h1>{this.props.album.name}</h1>  

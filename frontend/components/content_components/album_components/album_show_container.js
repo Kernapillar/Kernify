@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import AlbumShow from "./album_show";
 import { fetchAlbum } from "../../../actions/music_actions"
+import { fetchAllPlaylists } from "../../../actions/playlist_actions";
 
 const mSTP = (state, ownProps) => {
     return ({
@@ -12,7 +13,9 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
     return ({
-        fetchAlbum: albumId => dispatch(fetchAlbum(albumId))
+        fetchAlbum: albumId => dispatch(fetchAlbum(albumId)),
+        fetchAllPlaylists: () => dispatch(fetchAllPlaylists())
+
     })
 };
 

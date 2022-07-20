@@ -4,7 +4,7 @@ import dark_side from "../../../../app/assets/images/dark_side.jpeg"
 class CardIndexItem extends React.Component {
     constructor(props){
         super(props)
-        console.log("this is what the card item props looks like",this.props.media)
+        // console.log("this is what the card item props looks like",this.props.media)
     }
 
 
@@ -44,7 +44,7 @@ class CardIndexItem extends React.Component {
                 </div>
             )
         } else {
-            console.log("media peek for playlist: ", this.props)
+            // console.log("media peek for playlist: ", this.props)
             return (
                 <div className="card-text">
                     <p className="card-title">

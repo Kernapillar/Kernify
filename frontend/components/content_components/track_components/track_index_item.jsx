@@ -30,6 +30,7 @@ class TrackIndexItem extends React.Component {
             isHovering: false
         })
     }
+
     
     render(){
         // console.log("trackIndexItem props for album", this.props)
@@ -61,7 +62,8 @@ class TrackIndexItem extends React.Component {
                     <p>{this.props.track.duration}</p>
                     <div className="track-right-hoverables">
                         {this.state.isHovering ? 
-                        <TrackDropdownContainer  />  
+                        <TrackDropdownContainer album={this.props.track.album_id} trackType={this.props.trackType} artist={this.props.track.artist_id} 
+                        track={this.props.track}/>
                         :"" }
                     </div>                    
                 </div>

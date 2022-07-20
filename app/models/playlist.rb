@@ -1,6 +1,6 @@
 class Playlist < ApplicationRecord
     validates :name, uniqueness: true
-    validates :name, :picture_url, :user_id, presence: true
+    validates :name, :user_id, presence: true
 
 
     has_many :playlist_items, dependent: :destroy

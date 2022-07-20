@@ -4,7 +4,7 @@ import TrackIndexItem from "./track_index_item";
 class TrackIndex extends React.Component {
 
     trackTypeCheck = () => {
-        console.log("Found track type check! props: ", this.props)
+        // console.log("Found track type check! props: ", this.props)
         if (this.props.trackType === "playlist") {
             return this.props.tracks.map((track, index) => <TrackIndexItem key={track.id} artist={track.artist} trackType="playlist" album={track.album} track={track} position={index} />)
         } else {

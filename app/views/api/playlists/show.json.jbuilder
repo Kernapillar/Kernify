@@ -8,16 +8,19 @@ json.playlist do
     end
 end
 
+
+
 json.tracks do 
-    @playlist.tracks.each do |track|
-        json.set! track.id do 
-            json.extract! track, :id, :name, :duration, :artist_id, :album_id
-            if track.audio_url.attached? 
-                json.audioUrl url_for(track.audio_url)
+    playlistItem = @playlist.playlist_items.includes(:track)
+    playlistItem.each do |item|
+        json.set! item.track.id do 
+            json.extract! item.track, :id, :name, :duration, :artist_id, :album_id
+            if item.track.audio_url.attached? 
+                json.audioUrl url_for(item.track.audio_url)
             end
-            json.artist track.artist.name
-            json.album track.album.name
+            json.playlistItem item
+            json.artist item.track.artist.name
+            json.album item.track.album.name
         end
     end
 end
-
