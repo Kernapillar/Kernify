@@ -17,6 +17,7 @@
  *= require api/card
  *= require api/tracks
  *= require api/dropdown
+ *= require api/audio_player
  *= require_self
  */
 

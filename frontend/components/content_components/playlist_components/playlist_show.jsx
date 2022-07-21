@@ -1,5 +1,6 @@
 import React from "react";
 import TrackIndex from "../track_components/track_index";
+import PlaylistShowOptionsDropdownContainer from "../../dropdown_components/playlist_show_options_dropdown_container";
 
 class PlaylistShow extends React.Component {
 
@@ -9,14 +10,23 @@ class PlaylistShow extends React.Component {
 
     }
 
+    ownPlaylist() {
+        if (this.props.currentUser === this.props.playlist.user_id) {
+            return  <PlaylistShowOptionsDropdownContainer />
+        }
+    }
+
     render() {
-        // console.log("PSKLDJFSLIDHJFSD", this.props) 
-        if (!this.props.tracks[0]) {
+        console.log("playlistShowprops", this.props) 
+        if (!this.props.playlist) {
             return null
         } else {
             return (
                 <>
                     <h1>{this.props.playlist.name}</h1>
+                    <div className='playlist-options' >
+                       {this.ownPlaylist()}
+                    </div>
                     <TrackIndex tracks={this.props.tracks} trackType="playlist"/>
                 </>
             )
@@ -28,7 +38,3 @@ class PlaylistShow extends React.Component {
 export default PlaylistShow;
 
 
-// toDO!
-// make dropdown and playlist create form for playlist name and items. maybe make a fake picture generator? 
-// start on music/styling sidebar, AWS?
-// almost there! 

@@ -25,7 +25,7 @@ ActiveRecord:: Base.connection.reset_pk_sequence!('tracks')
 
 
 # user Seed
-demo_user = User.create(username: "Demo", password: "123456")
+demo_user = User.create(username: "Demo_User", password: "123456")
 
 # artist seeds
 artist1 = Artist.create(name: "Red Hot Chili Peppers", bio: "theyre red hot")
@@ -69,6 +69,9 @@ album6 = Album.create(name: "Wolfgang Amadeus Phoenix", year: 2009, artist_id: 4
 
     # Red Hot Chili Peppers
 track1 = Track.create(name: "Scar Tissue", duration: "1:00", album_id: 1, artist_id: 1)
+    audio_file1 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/Solid+Try+.mp3')
+    album1.audio_url.attach(io: file1, filename: 'Solid Try .mp3')
+
 track2 = Track.create(name: "Otherside", duration: "1:00", album_id: 1, artist_id: 1)
 track3 = Track.create(name: "Californiacation", duration: "1:00", album_id: 1, artist_id: 1)
 track4 = Track.create(name: "Easily", duration: "1:00", album_id: 1, artist_id: 1)

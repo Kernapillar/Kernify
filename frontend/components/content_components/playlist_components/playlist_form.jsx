@@ -1,4 +1,5 @@
 import React from "react";
+import {Redirect} from "react-router-dom"
 
 class PlaylistForm extends React.Component {
     constructor(props){
@@ -9,7 +10,8 @@ class PlaylistForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.createPlaylist(this.state)
+        console.log("history?", this.props)
+        this.props.processForm(this.state).then(() => this.props.history.push("/playlists/"));
     }
 
     update(field) {
@@ -24,10 +26,10 @@ class PlaylistForm extends React.Component {
                 <h1>{this.props.formType}</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>Name
-                        <input type="text" value={this.state.name} onChange={this.update('name')} />
+                        <input className="text-input" type="text" value={this.state.name} onChange={this.update('name')} />
                     </label>
                     <label>Description
-                        <input type="text" value={this.state.description} onChange={this.update('description')} />
+                        <input type="text" className="text-input" value={this.state.description} onChange={this.update('description')} />
                     </label>
 
                     <button type="submit">{this.props.formType}</button>

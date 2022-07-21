@@ -1,10 +1,12 @@
 import React from "react";
 import CardIndex from "../card_components/card_index";
+import TrackIndex from "../track_components/track_index";
 
 class ArtistShow extends React.Component {
 
     componentDidMount(){
-        this.props.fetchArtist()
+        this.props.fetchArtist();
+        this.props.fetchAllPlaylists();
     }
 
     
@@ -13,12 +15,23 @@ class ArtistShow extends React.Component {
         if (!this.props.artist || !this.props.albums) {
             return null
         } else {
-            // console.log("artist show props", this.props.artist[this.props.match.params.artistId].name)
+            console.log("artist show props", this.props)
             return (
                 <>
                     <h1>{this.props.artist.name}</h1>
+                    <br />
+                    <h3>Popular</h3>
+                    <TrackIndex tracks={this.props.tracks} trackType="artist" artist={this.props.artist} />
+                    <br />
+                    <h3>Albums</h3>
+                    <br />
                     <CardIndex mediaArr={this.props.albums} cardType={"album"} preview={false} 
                     artist={this.props.artist[this.props.match.params.artistId]}/>  
+                    <br />
+                    <h3>Bio</h3>
+                    <p>
+                        {this.props.artist.bio}
+                    </p>
                 </>
 
             )

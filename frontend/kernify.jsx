@@ -4,6 +4,7 @@ import Root from "./components/root"
 import configureStore from './store/store'
 import * as ActionTest from './actions/music_actions'
 import * as PlaylistTest from './actions/playlist_actions'
+import * as PlayerTest from "./actions/player_actions"
 // import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 // import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -42,6 +43,10 @@ if (window.currentUser) {
   window.createPlaylistItem = PlaylistTest.createPlaylistItem
   window.deletePlaylistItem = PlaylistTest.deletePlaylistItem
   
+  window.fetchQueue = PlayerTest.fetchQueue
+  window.playTrack = PlayerTest.playTrack
+
+
 
 });
 

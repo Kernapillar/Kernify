@@ -46,6 +46,7 @@ export const createPlaylistItem = (playlist_item) => {
 export const deletePlaylistItem = (playlistItemId) => {
     return $.ajax({
         url: `/api/playlist_items/${playlistItemId}`,
-        method: "DELETE"
+        method: "DELETE", 
+        data: {playlistItemId}
     })
 }

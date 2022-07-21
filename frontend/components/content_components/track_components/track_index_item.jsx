@@ -41,7 +41,9 @@ class TrackIndexItem extends React.Component {
             >
                 <div className="track-item-left">
                     <div className="track-play-position" >
-                        {this.state.isHovering ? <i className="fa fa-play" ></i> : (this.props.position + 1)}
+                        {this.state.isHovering ? 
+                        <span className="material-symbols-outlined">play_arrow</span>
+                         : (this.props.position + 1)}
                     </div>
                     <div className="track-text">
                         <p className="track-title">{this.props.track.name}</p>
@@ -57,7 +59,7 @@ class TrackIndexItem extends React.Component {
                 </p> 
                 <div className="track-item-right">
                     <div className="track-right-hoverables">
-                        {this.state.isHovering ? <i className="fa fa-heart"></i> :"" }
+                        {this.state.isHovering ? <span className="material-symbols-outlined">favorite</span> :"" }
                     </div>
                     <p>{this.props.track.duration}</p>
                     <div className="track-right-hoverables">

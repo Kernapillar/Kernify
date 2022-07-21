@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
 
     demoLogin(e) {
         e.preventDefault();
-        const demoUser = {username: "Demo", password: "123456"}
+        const demoUser = {username: "Demo_User", password: "123456"}
         this.props.submitDemo(demoUser)
     }
 
@@ -87,26 +87,26 @@ class SessionForm extends React.Component {
                     <form className="session-form-box" onSubmit={this.handleSubmit}>
                     <label className="session-label"> What is your email address?
                             <br />
-                            <input type="text"  placeholder="Enter your email address."
-                            className={'login-input'} />
+                            <input type="text"   placeholder="Enter your email address."
+                            className={'login-input text-input'} />
                         </label>
                         <br />
                         <label className="session-label"> What should we call you?
                             <br />
                             <input type="text" value={this.state.username} placeholder="Enter a profile name."
-                            onChange={this.update('username')} className={'login-input'} />
+                            onChange={this.update('username')} className={'login-input text-input'} />
                         </label>
                         <br />
                         <label className="session-label"> Create a password
                             <br />
                             <input type="password" value={this.state.password} placeholder="Create a password."
-                            onChange={this.update('password')} className={'login-input'} />
+                            onChange={this.update('password')} className={'login-input text-input'} />
                         </label>
                         <br />
                         <label className="session-label"> Confirm your password
                             <br />
                             <input type="password" placeholder="Enter your password again."
-                            className={'login-input'} />
+                            className={'login-input text-input'} />
                         </label>
                         <br />
                         <button type="submit" className={"session-form-submit"}>Sign Up</button>
@@ -131,13 +131,13 @@ class SessionForm extends React.Component {
                         <label className="session-label"> Username
                             <br />
                             <input type="text" value={this.state.username} placeholder="Enter username."
-                            onChange={this.update('username')} className={'login-input'} />
+                            onChange={this.update('username')} className={'login-input text-input'} />
                         </label>
                         <br />
                         <label className="session-label">Password 
                             <br />
                             <input type="password" value={this.state.password} placeholder="Password."
-                            onChange={this.update('password')} className={'login-input'} />
+                            onChange={this.update('password')} className={'login-input text-input'} />
                         </label>
                         <br />
                         <button type="submit" className={"session-form-submit"}>Log in</button>
