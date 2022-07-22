@@ -5,6 +5,7 @@ import albumsReducer from "./albums_reducer";
 import tracksReducer from "./tracks_reducer";
 import playlistReducer from "./playlists_reducer";
 import playerReducer from "./player_reducer"
+import isPlayingReducer from "./is_playing_reducer";
 
 const entitiesReducer = combineReducers({
     users: usersReducer,
@@ -12,7 +13,8 @@ const entitiesReducer = combineReducers({
     albums: albumsReducer,
     tracks: tracksReducer, 
     playlists: playlistReducer,
-    player: playerReducer
+    player: playerReducer, 
+    playing: isPlayingReducer
 })
 
 

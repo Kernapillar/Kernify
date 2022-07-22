@@ -17,12 +17,12 @@
     height: 10px;
     outline: none;
     background-color: grey;
-    --seek-before-width: 0
+    --progress-bar-left: 0
 }
 .progressBar::before {
     content: '';   
     height: 10px;
-    width: var(--seek-before-width);
+    width: var(--progress-bar-left);
     background-color: greenyellow;
     position: absolute;
     left: 0;

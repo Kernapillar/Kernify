@@ -1,9 +1,9 @@
 import React from "react";
-import AudioPlayer from "../audio_player_components/audio_player";
+import AudioPlayerContainer from "../audio_player_components/audio_player_container"
 
 const MusicPlayer = () => (
     <div className="music-player">
-        <AudioPlayer />
+        <AudioPlayerContainer />
     </div>
 )
 

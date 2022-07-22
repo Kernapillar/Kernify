@@ -1,18 +1,16 @@
-export const RECEIVE_NEXT_TRACK = "RECEIVE_NEXT_TRACK";
-export const RECEIVE_PREV_TRACK = "RECEIVE_PREV_TRACK";
+// export const RECEIVE_NEXT_TRACK = "RECEIVE_NEXT_TRACK";
+// export const RECEIVE_PREV_TRACK = "RECEIVE_PREV_TRACK";
 export const SET_CURRENT_TRACK = "SET_CURRENT_TRACK";
 export const RECEIVE_QUEUE = "RECEIVE_QUEUE";
+export const IS_PLAYING = "IS_PLAYING";
+export const START_PLAYING = "START_PLAYING";
+export const STOP_PLAYING = "STOP_PLAYING"
 
 
-const receiveNextTrack = () => {
-    return ({
-        type: RECEIVE_NEXT_TRACK
-    })
-}
-
-const receivePrevTrack = () => {
-    return ({
-        type: RECEIVE_PREV_TRACK
+const isPlaying = () => {
+    return({
+        type: IS_PLAYING,
+        
     })
 }
 
@@ -30,13 +28,17 @@ const receiveQueue = (tracks) => {
     })
 }
 
-export const nextTrack = () => (dispatch) => {
-    dispatch(receiveNextTrack())
+const startPlaying = () => {
+    return ({
+        type: START_PLAYING
+    })
+}
+const stopPlaying = () => {
+    return ({
+        type: STOP_PLAYING
+    })
 }
 
-export const prevTrack = () => (dispatch) => {
-    dispatch(receivePrevTrack())
-}
 
 export const playTrack = (track) => (dispatch) => {
     dispatch(setCurrentTrack(track))
@@ -44,4 +46,14 @@ export const playTrack = (track) => (dispatch) => {
 
 export const fetchQueue = (tracks) => (dispatch) => {
     dispatch(receiveQueue(tracks))
+}
+
+export const fetchIsPlaying = () => (dispatch) => {
+    dispatch(isPlaying())
+}
+export const receiveStartPlaying = () => (dispatch) => {
+    dispatch(startPlaying())
+}
+export const receiveStopPlaying = () => (dispatch) => {
+    dispatch(stopPlaying())
 }

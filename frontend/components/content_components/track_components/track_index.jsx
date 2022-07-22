@@ -24,7 +24,7 @@ class TrackIndex extends React.Component {
         if (!this.props.tracks) {
             return null 
         } else {
-            console.log("made it to tracks", this.props)
+            // console.log("made it to tracks", this.props)
 
         return (
             <ul className="track-list-container">
@@ -44,7 +44,7 @@ class TrackIndex extends React.Component {
                         </div>
                     </div>
                     <div className="track-header-right">
-                            <i className="fa fa-clock-o track-subtitle"></i>
+                    <span className="material-symbols-outlined">schedule</span>
                     </div>
                 </div>
                 <hr  className="track-list-hr"/>

@@ -17,13 +17,15 @@ class PlaylistShow extends React.Component {
     }
 
     render() {
-        console.log("playlistShowprops", this.props) 
+        // console.log("playlistShowprops", this.props) 
         if (!this.props.playlist) {
             return null
         } else {
             return (
                 <>
                     <h1>{this.props.playlist.name}</h1>
+                    <img className="card-picture show-picture" src={ this.props.playlist.pictureUrl ? this.props.playlist.pictureUrl : dark_side} alt="card picure" />
+                    <div><p>{this.props.playlist.description}</p></div>
                     <div className='playlist-options' >
                        {this.ownPlaylist()}
                     </div>
