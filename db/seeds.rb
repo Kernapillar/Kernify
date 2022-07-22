@@ -18,6 +18,10 @@ Album.destroy_all
 ActiveRecord:: Base.connection.reset_pk_sequence!('albums')
 Track.destroy_all
 ActiveRecord:: Base.connection.reset_pk_sequence!('tracks')
+Playlist.destroy_all
+ActiveRecord:: Base.connection.reset_pk_sequence!('playlists')
+PlaylistItem.destroy_all
+ActiveRecord:: Base.connection.reset_pk_sequence!('playlist_items')
 
 
 
@@ -82,15 +86,15 @@ track2 = Track.create(name: "Otherside", duration: "1:00", album_id: 1, artist_i
     # track2.audio_url.attach(io: audio_file2, filename: 'RedHotChiliPeppers-Otherside[OfficialMusicVideo].mp3')
 
 track3 = Track.create(name: "Californiacation", duration: "1:00", album_id: 1, artist_id: 1)
-    # audio_file3 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/RedHotChiliPeppers-Californication[OfficialMusicVideo].mp3')
-    # track3.audio_url.attach(io: audio_file3, filename: 'RedHotChiliPeppers-Californication[OfficialMusicVideo].mp3')
+    audio_file3 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/RHCPCaliforniacation.mp3')
+    track3.audio_url.attach(io: audio_file3, filename: 'RHCPCaliforniacation.mp3')
 
 track4 = Track.create(name: "Easily", duration: "1:00", album_id: 1, artist_id: 1)
 
 track5 = Track.create(name: "Dani California", duration: "1:00", album_id: 2, artist_id: 1)
 track6 = Track.create(name: "Snow (Hey Oh)", duration: "1:00", album_id: 2, artist_id: 1)
-    # audio_file6 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/RedHotChiliPeppers-Snow(HeyOh)(OfficialMusicVideo).mp3')
-    # track6.audio_url.attach(io: audio_file6, filename: 'RedHotChiliPeppers-Snow(HeyOh)(OfficialMusicVideo).mp3')
+    audio_file6 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/RHCPSnow.mp3')
+    track6.audio_url.attach(io: audio_file6, filename: 'RHCPSnow.mp3')
 
 track7 = Track.create(name: "Charlie", duration: "1:00", album_id: 2, artist_id: 1)
 track8 = Track.create(name: "Wet Sand", duration: "1:00", album_id: 2, artist_id: 1)
@@ -116,43 +120,43 @@ track22 = Track.create(name: "Adrift", duration: "1:00", album_id: 5, artist_id:
 
     # Phoenix
 track23 = Track.create(name: "Lisztomania", duration: "1:00", album_id: 6, artist_id: 4)
-    # audio_file23 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/Phoenix-Lisztomania(OfficialVideo).mp3')
-    # track23.audio_url.attach(io: audio_file23, filename: 'Phoenix-Lisztomania(OfficialVideo).mp3')
+    audio_file23 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/PhoenixLisztomania.mp3')
+    track23.audio_url.attach(io: audio_file23, filename: 'PhoenixLisztomania.mp3')
 
 track24 = Track.create(name: "1901", duration: "1:00", album_id: 6, artist_id: 4)
-    # audio_file24 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/Phoenix-901(OfficialVideo).mp3')
-    # track24.audio_url.attach(io: audio_file24, filename: 'Phoenix-901(OfficialVideo).mp3')
+    audio_file24 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/Phoenix1901.mp3')
+    track24.audio_url.attach(io: audio_file24, filename: 'Phoenix1901.mp3')
 
 track25 = Track.create(name: "Lasso", duration: "1:00", album_id: 6, artist_id: 4)
 track26 = Track.create(name: "Rome", duration: "1:00", album_id: 6, artist_id: 4)
 track27 = Track.create(name: "Countdown", duration: "1:00", album_id: 6, artist_id: 4)
 track28 = Track.create(name: "Girlfriend", duration: "1:00", album_id: 6, artist_id: 4)
 track29 = Track.create(name: "Armistice", duration: "1:00", album_id: 6, artist_id: 4)
-    # audio_file29 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/Phoenix-Armistice.mp3')
-    # track29.audio_url.attach(io: audio_file29, filename: 'Phoenix-Armistice.mp3')
+    audio_file29 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/PhoenixArmistice.mp3')
+    track29.audio_url.attach(io: audio_file29, filename: 'PhoenixArmistice.mp3')
 
 
     # Pink Floyd
 
 track30 = Track.create(name: "Shine On You Crazy Diamond (Parts I - V)", duration: "1:00", album_id: 7, artist_id: 5)
-    # audio_file30 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/01ShineOnYouCrazyDiamond(PartsI-V).m4a')
-    # track30.audio_url.attach(io: audio_file30, filename: '01ShineOnYouCrazyDiamond(PartsI-V).m4a')
+    audio_file30 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/PFShineOnYouCrazyDiamond1.m4a')
+    track30.audio_url.attach(io: audio_file30, filename: 'PFShineOnYouCrazyDiamond1.m4a')
 
 track31 = Track.create(name: "Welcome to the Machine", duration: "1:00", album_id: 7, artist_id: 5)
-    # audio_file31 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/02WelcometotheMachine.m4a')
-    # track31.audio_url.attach(io: audio_file31, filename: '02WelcometotheMachine.m4a')
+    audio_file31 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/PFWelcometotheMachine.m4a')
+    track31.audio_url.attach(io: audio_file31, filename: 'PFWelcometotheMachine.m4a')
 
 track32 = Track.create(name: "Have a Cigar", duration: "1:00", album_id: 7, artist_id: 5)
-    # audio_file32 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/03HaveACigar.m4a')
-    # track32.audio_url.attach(io: audio_file32, filename: '03HaveACigar.m4a')
+    audio_file32 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/PFHaveACigar.m4a')
+    track32.audio_url.attach(io: audio_file32, filename: 'PFHaveACigar.m4a')
 
 track33 = Track.create(name: "Wish You Were Here", duration: "1:00", album_id: 7, artist_id: 5)
-    # audio_file33 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/04WishYouWereHere.m4a')
-    # track33.audio_url.attach(io: audio_file33, filename: '04WishYouWereHere.m4a')
+    audio_file33 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/PFWishYouWereHere.m4a')
+    track33.audio_url.attach(io: audio_file33, filename: 'PFWishYouWereHere.m4a')
 
 track34 = Track.create(name: "Shine On You Crazy Diamond (Parts VI - IX)", duration: "1:00", album_id: 7, artist_id: 5)
-    # audio_file34 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/05ShineOnYouCrazyDiamond(PartsVI-IX).m4a')
-    # track34.audio_url.attach(io: audio_file34, filename: '05ShineOnYouCrazyDiamond(PartsVI-IX).m4a')
+    audio_file34 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/PFShineOnYouCrazyDiamond2.m4a')
+    track34.audio_url.attach(io: audio_file34, filename: 'PFShineOnYouCrazyDiamond2.m4a')
 
 
 

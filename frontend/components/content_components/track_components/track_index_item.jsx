@@ -10,6 +10,7 @@ class TrackIndexItem extends React.Component {
         };
         this.onMouseEnterHandler = this.onMouseEnterHandler.bind(this);
         this.onMouseOffHandler = this.onMouseOffHandler.bind(this);
+        this.pressPlay = this.pressPlay.bind(this)
     }
 
     albumLinkRender = () => {
@@ -31,6 +32,10 @@ class TrackIndexItem extends React.Component {
         })
     }
 
+    pressPlay() {
+        this.props.fetchQueue(this.props.tracksObject);
+    }
+
     
     render(){
         // console.log("trackIndexItem props for album", this.props)
@@ -42,7 +47,7 @@ class TrackIndexItem extends React.Component {
                 <div className="track-item-left">
                     <div className="track-play-position" >
                         {this.state.isHovering ? 
-                        <span className="material-symbols-outlined">play_arrow</span>
+                        <span onClick={this.pressPlay} className="material-symbols-outlined">play_arrow</span>
                          : (this.props.position + 1)}
                     </div>
                     <div className="track-text">

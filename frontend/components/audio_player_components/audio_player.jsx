@@ -19,11 +19,11 @@ const AudioPlayer = (props) => {
         progressBar.current.max = seconds;
     }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState]);
    
-    useEffect(() =>  {
-        console.log("fetching queue")
-        props.fetchQueue(props.tracks)
-        togglePlayPause();
-    }, [props.tracks])
+    // useEffect(() =>  {
+    //     console.log("fetching queue")
+    //     props.fetchQueue(props.tracks)
+    //     // togglePlayPause();
+    // }, [props.tracks])
 
     // useEffect(() => {
     //     // audioPlayer.current.src = props.player[currentTrack].audioUrl

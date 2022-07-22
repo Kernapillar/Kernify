@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import trackIndex from "./track_index";
 import { fetchAllTracks, fetchAlbum } from "../../../actions/music_actions"
+import { fetchQueue } from "../../actions/player_actions";
 
 const mSTP = (state) => {
     return ({
@@ -11,7 +12,7 @@ const mSTP = (state) => {
 const mDTP = (dispatch) => {
     return ({
         fetchAllTracks: () => dispatch(fetchAllTracks()),
-        fetchAlbum: (albumId) => dispatch(fetchAlbum(albumId)) 
+        fetchAlbum: (albumId) => dispatch(fetchAlbum(albumId))
         // ^ is this necessary here? what methods will tracks need
         // play, like, add to playlist? etc
     })

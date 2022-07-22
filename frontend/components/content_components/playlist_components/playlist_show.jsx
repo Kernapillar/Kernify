@@ -29,7 +29,8 @@ class PlaylistShow extends React.Component {
                     <div className='playlist-options' >
                        {this.ownPlaylist()}
                     </div>
-                    <TrackIndex tracks={this.props.tracks} trackType="playlist"/>
+                    <TrackIndex tracks={this.props.tracks} tracksObject={this.props.tracksObject} fetchQueue={this.props.fetchQueue}
+                    trackType="playlist"/>
                 </>
             )
         }
