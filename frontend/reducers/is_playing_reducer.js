@@ -1,16 +1,12 @@
-import { IS_PLAYING, START_PLAYING, STOP_PLAYING } from "../actions/player_actions";
+import { SET_CURRENT_TRACK } from "../actions/player_actions";
 
 
 
-const isPlayingReducer = (state = false, action) => {
+const isPlayingReducer = (state = 0, action) => {
     Object.freeze(state);
     switch (action.type) {
-        case IS_PLAYING:
-            return state
-        case START_PLAYING:
-            return true
-        case STOP_PLAYING:
-                return false
+        case SET_CURRENT_TRACK:
+           return action.trackId
         default:
             return state;
     }

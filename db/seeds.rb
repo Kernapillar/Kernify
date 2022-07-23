@@ -46,8 +46,8 @@ artist5 = Artist.create(name: "Pink Floyd", bio: "My dad liked them and now I do
 # album seeds
 
 album1 = Album.create(name: "Californiaction", year: 1999, artist_id: 1)
-    file1 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/californiacation.jpeg')
-    album1.picture_url.attach(io: file1, filename: 'californiacation.jpeg')
+    file1 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/californiacation.jpg')
+    album1.picture_url.attach(io: file1, filename: 'californiacation.jpg')
 
 album2 = Album.create(name: "Stadium Arcadium", year: 2006, artist_id: 1)
     file2 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/Stadiumarcadium.jpeg')
@@ -166,8 +166,8 @@ track34 = Track.create(name: "Shine On You Crazy Diamond (Parts VI - IX)", durat
 # Playlist Seeds
 
 playlist1 = Playlist.create(name: "testPlaylist1", description: "idk lets see if it works", user_id: 1)
-    playlist_file1 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/cat_smile.jpeg')
-    playlist1.picture_url.attach(io: playlist_file1, filename: 'cat_smile.jpeg')
+    playlist_file1 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/cat_smile.jpg')
+    playlist1.picture_url.attach(io: playlist_file1, filename: 'cat_smile.jpg')
 
 playlist2 = Playlist.create(name: "Yellow Mild Banana Peppers", description: "not super loud peppers", user_id: 1)
     playlist_file2 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/cat_vader.jpeg')

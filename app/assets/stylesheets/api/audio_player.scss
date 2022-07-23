@@ -1,14 +1,34 @@
 
 .audio-player-container {
     display: flex;
-    width: 700px;
+    width: 100%;
     color: white;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
+.player-controls {
+    display: flex;
+    flex-direction: column;
+}
 
-
+.current-track-info {
+    width: 400px;
+}
+.volume {
+    width: 400px;
+    display: flex;
+    justify-content: right;
+}
+.control-top {
+    display: flex;
+    justify-content: center;
+}
+.control-bottom {
+    display: flex;
+    
+}
+ 
 .progressBar {
     appearance: none;
     border-radius: 10px;

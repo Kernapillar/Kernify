@@ -17,7 +17,7 @@ class AlbumShow extends React.Component {
                     <h1>{this.props.album.name}</h1>  
                     <img className="card-picture show-picture" src={ this.props.album.pictureUrl ? this.props.album.pictureUrl : dark_side} alt="card picure" />
 
-                    <TrackIndex tracks={this.props.tracks} tracksObject={this.props.tracksObject} fetchQueue={this.props.fetchQueue} artist={this.props.tracks.artist} album={this.props.album}/>
+                    <TrackIndex tracks={this.props.tracks} playTrack={this.props.playTrack} tracksObject={this.props.tracksObject} fetchQueue={this.props.fetchQueue} artist={this.props.tracks.artist} album={this.props.album}/>
                 </>
             )
         }

@@ -21,7 +21,7 @@ class ArtistShow extends React.Component {
                     <h1>{this.props.artist.name}</h1>
                     <br />
                     <h3>Popular</h3>
-                    <TrackIndex tracks={this.props.tracks} fetchQueue={this.props.fetchQueue} tracksObject={this.props.tracksObject} trackType="artist" artist={this.props.artist} />
+                    <TrackIndex tracks={this.props.tracks} playTrack={this.props.playTrack} fetchQueue={this.props.fetchQueue} tracksObject={this.props.tracksObject} trackType="artist" artist={this.props.artist} />
                     <br />
                     <h3>Albums</h3>
                     <br />

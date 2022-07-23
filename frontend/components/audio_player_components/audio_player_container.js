@@ -1,7 +1,6 @@
 import AudioPlayer from "./audio_player";
 import { connect } from "react-redux";
-import { fetchQueue, playTrack } from "../../actions/player_actions";
-import { fetchIsPlaying, receiveStartPlaying, receiveStopPlaying } from "../../actions/player_actions";
+import AudioPlayerTest from "./testplayer";
 
 
 const mSTP = (state) => {
@@ -13,15 +12,7 @@ const mSTP = (state) => {
     })
 }
 
-const mDTP = (dispatch) => {
-    return ({
-        fetchQueue: tracks => dispatch(fetchQueue(tracks)),
-        playTrack: track => dispatch(playTrack(track)),
-        fetchIsPlaying: () => dispatch(fetchIsPlaying()),
-        startPlaying: () => dispatch(receiveStartPlaying()),
-        stopPlaying: () => dispatch(receiveStopPlaying())
 
-    })
-}
 
-export default connect(mSTP, mDTP)(AudioPlayer);
+export default connect(mSTP)(AudioPlayer);
+// export default connect(mSTP)(AudioPlayerTest);

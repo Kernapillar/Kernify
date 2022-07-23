@@ -14,10 +14,10 @@ const isPlaying = () => {
     })
 }
 
-const setCurrentTrack = (track) => {
+const setCurrentTrack = (trackId) => {
     return({
         type: SET_CURRENT_TRACK,
-        track
+        trackId
     })
 }
 
@@ -40,8 +40,8 @@ const stopPlaying = () => {
 }
 
 
-export const playTrack = (track) => (dispatch) => {
-    dispatch(setCurrentTrack(track))
+export const playTrack = (trackId) => (dispatch) => {
+    dispatch(setCurrentTrack(trackId))
 }
 
 export const fetchQueue = (tracks) => (dispatch) => {

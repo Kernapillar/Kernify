@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import ArtistShow from "./artist_show";
 import { fetchArtist } from "../../../actions/music_actions"
 import { fetchAllPlaylists } from "../../../actions/playlist_actions";
-import { fetchQueue } from "../../../actions/player_actions";
+import { fetchQueue, playTrack } from "../../../actions/player_actions";
 
 
 const mSTP = (state, ownProps) => {
@@ -19,7 +19,8 @@ const mDTP = (dispatch, ownProps) => {
     return ({
         fetchArtist: () => dispatch(fetchArtist(ownProps.match.params.artistId)), 
         fetchAllPlaylists: () => dispatch(fetchAllPlaylists()), 
-        fetchQueue: (tracks) => dispatch(fetchQueue(tracks))
+        fetchQueue: (tracks) => dispatch(fetchQueue(tracks)),
+        playTrack: (trackId) => dispatch(playTrack(trackId))
     })
 };
 

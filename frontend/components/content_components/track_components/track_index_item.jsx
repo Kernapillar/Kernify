@@ -34,6 +34,8 @@ class TrackIndexItem extends React.Component {
 
     pressPlay() {
         this.props.fetchQueue(this.props.tracksObject);
+        this.props.playTrack(this.props.position);
+
     }
 
     
