@@ -50,20 +50,20 @@ album1 = Album.create(name: "Californiaction", year: 1999, artist_id: 1)
     album1.picture_url.attach(io: file1, filename: 'californiacation.jpg')
 
 album2 = Album.create(name: "Stadium Arcadium", year: 2006, artist_id: 1)
-    file2 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/Stadiumarcadium.jpeg')
-    album2.picture_url.attach(io: file2, filename: 'Stadiumarcadium.jpeg')
+    file2 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/Stadiumarcadium.jpg')
+    album2.picture_url.attach(io: file2, filename: 'Stadiumarcadium.jpg')
     
 album3 = Album.create(name: "In the Mountain in the Cloud", year: 2011, artist_id: 2)
-    file3 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/In_the_Mountain_in_the_Cloud.jpeg')
-    album3.picture_url.attach(io: file3, filename: 'In_the_Mountain_in_the_Cloud.jpeg')
+    file3 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/In_the_Mountain_in_the_Cloud.jpg')
+    album3.picture_url.attach(io: file3, filename: 'In_the_Mountain_in_the_Cloud.jpg')
 
 album4 = Album.create(name: "The Satanic Satanist", year: 2009, artist_id: 2)
     file4 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/PortugalTheMan.jpg')
     album4.picture_url.attach(io: file4, filename: 'PortugalTheMan.jpg')
 
 album5 = Album.create(name: "Dive", year: 2011, artist_id: 3)
-    file5 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/Dive_tycho_album.jpeg')
-    album5.picture_url.attach(io: file5, filename: 'Dive_tycho_album.jpeg')
+    file5 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/Dive_tycho_album.jpg')
+    album5.picture_url.attach(io: file5, filename: 'Dive_tycho_album.jpg')
 
 album6 = Album.create(name: "Wolfgang Amadeus Phoenix", year: 2009, artist_id: 4)
     file6 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/Wolfgang_Amadeus_Phoenix.png')
@@ -170,16 +170,16 @@ playlist1 = Playlist.create(name: "testPlaylist1", description: "idk lets see if
     playlist1.picture_url.attach(io: playlist_file1, filename: 'cat_smile.jpg')
 
 playlist2 = Playlist.create(name: "Yellow Mild Banana Peppers", description: "not super loud peppers", user_id: 1)
-    playlist_file2 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/cat_vader.jpeg')
-    playlist2.picture_url.attach(io: playlist_file2, filename: 'cat_vader.jpeg')
+    playlist_file2 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/cat_vader.jpg')
+    playlist2.picture_url.attach(io: playlist_file2, filename: 'cat_vader.jpg')
 
 playlist3 = Playlist.create(name: "instrumental", description: "its got no words", user_id: 1)
-    playlist_file3 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/stick.jpeg')
-    playlist3.picture_url.attach(io: playlist_file3, filename: 'stick.jpeg')
+    playlist_file3 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/stick.jpg')
+    playlist3.picture_url.attach(io: playlist_file3, filename: 'stick.jpg')
 
 playlist4 = Playlist.create(name: "The Ones With Sound", description: "I hope ", user_id: 2)
-    playlist_file4 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/gecko.jpeg')
-    playlist4.picture_url.attach(io: playlist_file4, filename: 'gecko.jpeg')
+    playlist_file4 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/gecko.jpg')
+    playlist4.picture_url.attach(io: playlist_file4, filename: 'gecko.jpg')
 
 # Playlist Item Seeds
 

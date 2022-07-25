@@ -1,6 +1,5 @@
 import AudioPlayer from "./audio_player";
 import { connect } from "react-redux";
-import AudioPlayerTest from "./testplayer";
 
 
 const mSTP = (state) => {
@@ -15,4 +14,3 @@ const mSTP = (state) => {
 
 
 export default connect(mSTP)(AudioPlayer);
-// export default connect(mSTP)(AudioPlayerTest);
