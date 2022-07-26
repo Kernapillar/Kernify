@@ -45,7 +45,7 @@ artist5 = Artist.create(name: "Pink Floyd", bio: "My dad liked them and now I do
 
 # album seeds
 
-album1 = Album.create(name: "Californiaction", year: 1999, artist_id: 1)
+album1 = Album.create(name: "Californiaction", year: 1999, artist_id: artist1.id)
     file1 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/californiacation.jpg')
     album1.picture_url.attach(io: file1, filename: 'californiacation.jpg')
 
@@ -77,7 +77,7 @@ album1 = Album.create(name: "Californiaction", year: 1999, artist_id: 1)
 # # track seeds
 
     # Red Hot Chili Peppers
-track1 = Track.create(name: "Scar Tissue", duration: "1:00", album_id: 1, artist_id: 1)
+track1 = Track.create(name: "Scar Tissue", duration: "1:00", album_id: album1.id, artist_id: artist1.id)
     audio_file1 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/Final_Recording_AK.mp3')
     track1.audio_url.attach(io: audio_file1, filename: 'Final_Recording_AK.mp3')
 
@@ -177,7 +177,7 @@ track1 = Track.create(name: "Scar Tissue", duration: "1:00", album_id: 1, artist
 #     playlist_file3 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/stick.jpg')
 #     playlist3.picture_url.attach(io: playlist_file3, filename: 'stick.jpg')
 
-playlist4 = Playlist.create(name: "The Ones With Sound", description: "I hope ", user_id: 2)
+playlist4 = Playlist.create(name: "The Ones With Sound", description: "I hope ", user_id: user2.id)
     playlist_file4 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/gecko.jpg')
     playlist4.picture_url.attach(io: playlist_file4, filename: 'gecko.jpg')
 
@@ -205,7 +205,7 @@ playlist4 = Playlist.create(name: "The Ones With Sound", description: "I hope ",
 # PlaylistItem15 = PlaylistItem.create(playlist_id: 3, track_id: 20)
 
 #     # playlist 4
-PlaylistItem16 = PlaylistItem.create(playlist_id: 4, track_id: 1)
+PlaylistItem16 = PlaylistItem.create(playlist_id: playlist4.id, track_id: track1.id)
 # PlaylistItem17 = PlaylistItem.create(playlist_id: 4, track_id: 3)
 # PlaylistItem18 = PlaylistItem.create(playlist_id: 4, track_id: 6)
 # PlaylistItem19 = PlaylistItem.create(playlist_id: 4, track_id: 23)
