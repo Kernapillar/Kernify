@@ -205,7 +205,7 @@ PlaylistItem14 = PlaylistItem.create(playlist_id: 3, track_id: 15)
 PlaylistItem15 = PlaylistItem.create(playlist_id: 3, track_id: 20)
 
     # playlist 4
-PlaylistItem16 = PlaylistItem.create(playlist_id: playlist4.id, track_id: track1.id)
+# PlaylistItem16 = PlaylistItem.create(playlist_id: playlist4.id, track_id: track1.id)
 PlaylistItem16 = PlaylistItem.create(playlist_id: 4, track_id: 1)
 
 PlaylistItem17 = PlaylistItem.create(playlist_id: 4, track_id: 3)
