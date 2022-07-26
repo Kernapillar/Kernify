@@ -76,7 +76,7 @@ album7 = Album.create(name: "Wish You Were Here", year: 1975, artist_id: 5)
 
 # track seeds
 
-    Red Hot Chili Peppers
+    # Red Hot Chili Peppers
 track1 = Track.create(name: "Scar Tissue", duration: "1:00", album_id: album1.id, artist_id: artist1.id)
     audio_file1 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/Final_Recording_AK.mp3')
     track1.audio_url.attach(io: audio_file1, filename: 'Final_Recording_AK.mp3')
