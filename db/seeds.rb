@@ -177,7 +177,7 @@ track1 = Track.create(name: "Scar Tissue", duration: "1:00", album_id: album1.id
 #     playlist_file3 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/stick.jpg')
 #     playlist3.picture_url.attach(io: playlist_file3, filename: 'stick.jpg')
 
-playlist4 = Playlist.create(name: "The Ones With Sound", description: "I hope ", user_id: user2.id)
+playlist4 = Playlist.create(name: "The Ones With Sound", description: "I hope ", user_id: admin_user.id)
     playlist_file4 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/gecko.jpg')
     playlist4.picture_url.attach(io: playlist_file4, filename: 'gecko.jpg')
 
