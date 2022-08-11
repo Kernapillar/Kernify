@@ -54,6 +54,7 @@
 .progressBar::-webkit-slider-thumb {
     
     appearance: none;
+    pointer-events: auto;
 }
 
 .progressBar:active::-webkit-slider-thumb {

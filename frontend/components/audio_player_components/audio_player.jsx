@@ -15,7 +15,7 @@ const AudioPlayer = (props) => {
 
     
     useEffect(() => {    
-        
+        console.log('useeffect?!')
         const audio = document.getElementById("audioPlayer");
         
 
@@ -50,6 +50,7 @@ const AudioPlayer = (props) => {
         const returnMinutes = minutes < 10 ? `0${minutes}` : minutes
         return(`${returnMinutes}:${returnSeconds}`)
     }
+
     const nowPlaying = () => {
         progressBar.current.value = audioPlayer.current.currentTime
         progressBar.current.style.setProperty('--progress-bar-left', `${progressBar.current.value/audioPlayer.current.duration*100}%`)
@@ -63,6 +64,10 @@ const AudioPlayer = (props) => {
         audioPlayer.current.currentTime = progressBar.current.value
     progressBar.current.style.setProperty('--progress-bar-left', `${progressBar.current.value/audioPlayer.current.duration*100}%`)
     setCurrentTime(progressBar.current.value)
+    }
+
+    const clickBar = (e) => {
+        let width = clickRef
     }
 
     const prevTrack = () => {
@@ -82,11 +87,6 @@ const AudioPlayer = (props) => {
             
         }
     }
-
-
-
-    window.audioPlayer = audioPlayer.current
-    window.audioPlayer = audioPlayer.current
 
 
     return (
@@ -121,7 +121,7 @@ const AudioPlayer = (props) => {
             
                     {/* progress bar */}
                     <div>
-                        <input type="range" ref={progressBar} defaultValue={0} onChange={changeRange} max={duration} className="progressBar"/>
+                        <input type="range" ref={progressBar} defaultValue={0} onInput={changeRange}  max={duration} className="progressBar"/>
                     </div>
             
                     {/* duration */}
