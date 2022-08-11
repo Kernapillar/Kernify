@@ -15,7 +15,7 @@ const AudioPlayer = (props) => {
 
     
     useEffect(() => {    
-        console.log('useeffect?!')
+        // console.log("currentTime" , currentTime)
         const audio = document.getElementById("audioPlayer");
         
 
@@ -33,15 +33,12 @@ const AudioPlayer = (props) => {
         isPlaying ? audio.play() : audio.pause();
         isPlaying ? animationRef.current = requestAnimationFrame(nowPlaying) : cancelAnimationFrame(animationRef.current)
 
-        if (clickedTime && clickedTime !== currentTime) {
-            audio.currentTime = clickedTime;
-            setClickedTime(null);
-        }
         return () => {
             audio.removeEventListener("loadeddata", AudioData);
             audio.removeEventListener("timeupdate", updateTime);
+            // console.log("return hit")
         }
-    });
+    }), [progressBar];
 
     const currentTimeCalc = (secs) => {
         const minutes = Math.floor(secs/60);
@@ -60,15 +57,24 @@ const AudioPlayer = (props) => {
 
     }
 
-    const changeRange = () => {
-        audioPlayer.current.currentTime = progressBar.current.value
-    progressBar.current.style.setProperty('--progress-bar-left', `${progressBar.current.value/audioPlayer.current.duration*100}%`)
-    setCurrentTime(progressBar.current.value)
+    const changeRange = (e) => {
+        if (e.type === "change"){
+            console.log("dragged", progressBar.current.value)
+            audioPlayer.current.currentTime = progressBar.current.value;
+        }
+        // progressBar.current.style.setProperty('--progress-bar-left', `${progressBar.current.value/audioPlayer.current.duration*100}%`)
+        // setCurrentTime(progressBar.current.value)
     }
 
-    const clickBar = (e) => {
-        let width = clickRef
+    const clickChange = (e) => {
+        console.log(e)
+        let clickedX = (e.pageX - progressBar.current.offsetLeft) / progressBar.current.offsetWidth;
+        audioPlayer.current.currentTime = (clickedX * duration);
+        console.log("CLICKED", currentTime )
+        progressBar.current.value = currentTime
     }
+
+    
 
     const prevTrack = () => {
         if (currentTrack === 0) {
@@ -121,7 +127,8 @@ const AudioPlayer = (props) => {
             
                     {/* progress bar */}
                     <div>
-                        <input type="range" ref={progressBar} defaultValue={0} onInput={changeRange}  max={duration} className="progressBar"/>
+                        <input type="range" ref={progressBar} onChange={changeRange} onClick={clickChange} max={duration} className="progressBar"/>
+                        {/* <input type="range" ref={progressBar}  onClick={clickChange} max={duration} className="progressBar"/> */}
                     </div>
             
                     {/* duration */}
