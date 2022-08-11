@@ -5,7 +5,6 @@ const AudioPlayer = (props) => {
     const [duration, setDuration] = useState();
     const [currentTime, setCurrentTime] = useState();
     const [isPlaying, setIsPlaying] = useState(false);
-    const [clickedTime, setClickedTime] = useState();
     const [currentTrack, setCurrentTrack] = useState(0);
 
     const progressBar = useRef();
@@ -32,6 +31,14 @@ const AudioPlayer = (props) => {
 
         isPlaying ? audio.play() : audio.pause();
         isPlaying ? animationRef.current = requestAnimationFrame(nowPlaying) : cancelAnimationFrame(animationRef.current)
+
+        console.log("CurrentTime", Math.floor(audioPlayer.current.currentTime))
+        console.log("Duration", Math.floor(duration))
+
+        if (Math.floor(audioPlayer.current.currentTime) === Math.floor(duration)) {
+            console.log("ENDED")
+            nextTrack()
+        }
 
         return () => {
             audio.removeEventListener("loadeddata", AudioData);
