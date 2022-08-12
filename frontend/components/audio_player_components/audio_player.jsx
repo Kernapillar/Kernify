@@ -1,6 +1,7 @@
 import React from "react";
 import {useState, useEffect, useRef} from "react";
 
+
 const AudioPlayer = (props) => {
     const [duration, setDuration] = useState();
     const [currentTime, setCurrentTime] = useState();
@@ -11,18 +12,18 @@ const AudioPlayer = (props) => {
     const audioPlayer = useRef();
     const animationRef = useRef();
     
-
     
     useEffect(() => {    
         // console.log("currentTime" , currentTime)
         const audio = document.getElementById("audioPlayer");
         
-
         const AudioData = () => {
             setDuration(audio.duration);
             setCurrentTime(audio.currentTime);
         }
         setCurrentTrack(props.playing)
+
+        
 
         const updateTime = () => setCurrentTime(audio.currentTime);
 
@@ -46,6 +47,8 @@ const AudioPlayer = (props) => {
             // console.log("return hit")
         }
     }), [progressBar];
+
+    
 
     const currentTimeCalc = (secs) => {
         const minutes = Math.floor(secs/60);
@@ -85,10 +88,8 @@ const AudioPlayer = (props) => {
 
     const prevTrack = () => {
         if (currentTrack === 0) {
-            setIsPlaying(false);
             setCurrentTrack(props.player.length - 1)
         } else {
-            setIsPlaying(false);
             setCurrentTrack(currentTrack - 1)
             
         }
@@ -96,13 +97,13 @@ const AudioPlayer = (props) => {
 
     const nextTrack = () => {
         console.log("before",currentTrack)
+        setIsPlaying(false)
+        
         if (currentTrack === props.player.length - 1) {
-            // setIsPlaying(false);
             setCurrentTrack(0)
         } else {
-            // setIsPlaying(false);
             setCurrentTrack(currentTrack + 1)
-            
+            console.log("After change?")
         }
         console.log("after",currentTrack)
     }

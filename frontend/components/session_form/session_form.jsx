@@ -24,7 +24,7 @@ class SessionForm extends React.Component {
         this.setState({errors: []})
 
         e.preventDefault();
-        if (this.state.email.length === 0) {
+        if (this.state.email.length === 0 && this.props.formType === 'signup') {
             this.setState({errors: "Email cannot be empty"})
         } else {
             const user = Object.assign({}, this.state);
@@ -64,7 +64,7 @@ class SessionForm extends React.Component {
             )
         }
     }
-
+  
     update(field) {
         
         return e => this.setState({
