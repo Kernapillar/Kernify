@@ -4,6 +4,7 @@ import TrackIndex from "../track_components/track_index";
 class AlbumShow extends React.Component {
 
     componentDidMount(){
+        window.scrollTo(0, 0)
         this.props.fetchAlbum(this.props.match.params.albumId)
         this.props.fetchAllPlaylists();
     }

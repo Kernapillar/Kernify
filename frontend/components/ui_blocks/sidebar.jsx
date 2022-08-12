@@ -3,6 +3,8 @@ import { Link } from "react-router-dom"
 
 const SideBar = () => (
     <div className="sidebar">
+        <Link to="/"> <img src="https://kernify-seed.s3.us-west-1.amazonaws.com/kernify_logo.png" alt="Kernify Logo" />
+        </Link>
         <Link to="/"> <button><span className="material-symbols-outlined">home</span>
     &nbsp; Home</button></Link>
         <br />

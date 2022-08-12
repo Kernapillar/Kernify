@@ -32,8 +32,8 @@ const AudioPlayer = (props) => {
         isPlaying ? audio.play() : audio.pause();
         isPlaying ? animationRef.current = requestAnimationFrame(nowPlaying) : cancelAnimationFrame(animationRef.current)
 
-        console.log("CurrentTime", Math.floor(audioPlayer.current.currentTime))
-        console.log("Duration", Math.floor(duration))
+        // console.log("CurrentTime", Math.floor(audioPlayer.current.currentTime))
+        // console.log("Duration", Math.floor(duration))
 
         if (Math.floor(audioPlayer.current.currentTime) === Math.floor(duration)) {
             console.log("ENDED")
@@ -85,20 +85,26 @@ const AudioPlayer = (props) => {
 
     const prevTrack = () => {
         if (currentTrack === 0) {
+            setIsPlaying(false);
             setCurrentTrack(props.player.length - 1)
         } else {
+            setIsPlaying(false);
             setCurrentTrack(currentTrack - 1)
             
         }
     }
 
     const nextTrack = () => {
+        console.log("before",currentTrack)
         if (currentTrack === props.player.length - 1) {
+            // setIsPlaying(false);
             setCurrentTrack(0)
         } else {
+            // setIsPlaying(false);
             setCurrentTrack(currentTrack + 1)
             
         }
+        console.log("after",currentTrack)
     }
 
 

@@ -6,7 +6,9 @@ class SessionForm extends React.Component {
         super(props);
         this.state = {
             username: "", 
-            password: ""
+            password: "", 
+            email: "", 
+            errors: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this)
         this.swapForm = this.swapForm.bind(this)
@@ -19,9 +21,15 @@ class SessionForm extends React.Component {
     }
 
     handleSubmit(e) {
+        this.setState({errors: ""})
+
         e.preventDefault();
-        const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        if (this.state.email.length === 0) {
+            this.setState({errors: "Email cannot be empty"})
+        } else {
+            const user = Object.assign({}, this.state);
+            this.props.processForm(user);
+        }
     }
 
     demoLogin(e) {
@@ -58,6 +66,7 @@ class SessionForm extends React.Component {
     }
 
     update(field) {
+        
         return e => this.setState({
             [field]: e.target.value
         })
@@ -66,7 +75,7 @@ class SessionForm extends React.Component {
     renderErrors() {
         return(
           <ul className="session-errors-list">
-            {this.props.errors.session.map((error, i) => (
+            {this.props.errors.session.concat(this.state.errors).map((error, i) => (
               <li key={`error-${i}`}>
                 {error}
                 <br />
@@ -87,7 +96,7 @@ class SessionForm extends React.Component {
                     <form className="session-form-box" onSubmit={this.handleSubmit}>
                     <label className="session-label"> What is your email address?
                             <br />
-                            <input type="text"   placeholder="Enter your email address."
+                            <input type="text" value={this.state.email} onChange={this.update('email')} placeholder="Enter your email address."
                             className={'login-input text-input'} />
                         </label>
                         <br />
@@ -103,12 +112,7 @@ class SessionForm extends React.Component {
                             onChange={this.update('password')} className={'login-input text-input'} />
                         </label>
                         <br />
-                        <label className="session-label"> Confirm your password
-                            <br />
-                            <input type="password" placeholder="Enter your password again."
-                            className={'login-input text-input'} />
-                        </label>
-                        <br />
+                        
                         <button type="submit" className={"session-form-submit"}>Sign Up</button>
                     </form>
                     <hr />

@@ -6,6 +6,7 @@ import dark_side from "../../../../app/assets/images/dark_side.jpeg"
 class PlaylistShow extends React.Component {
 
     componentDidMount(){
+        window.scrollTo(0, 0)
         this.props.fetchPlaylist(this.props.match.params.playlistId);
         this.props.fetchAllPlaylists();
 
