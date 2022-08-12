@@ -8,7 +8,7 @@ class SessionForm extends React.Component {
             username: "", 
             password: "", 
             email: "", 
-            errors: ""
+            errors: []
         };
         this.handleSubmit = this.handleSubmit.bind(this)
         this.swapForm = this.swapForm.bind(this)
@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
     }
 
     handleSubmit(e) {
-        this.setState({errors: ""})
+        this.setState({errors: []})
 
         e.preventDefault();
         if (this.state.email.length === 0) {
@@ -76,7 +76,7 @@ class SessionForm extends React.Component {
         return(
           <ul className="session-errors-list">
             {this.props.errors.session.concat(this.state.errors).map((error, i) => (
-              <li key={`error-${i}`}>
+              <li className="session-error-item" key={`error-${i}`}>
                 {error}
                 <br />
               </li>
@@ -88,8 +88,7 @@ class SessionForm extends React.Component {
     signUpContent() {
         return (
             <div className="session-container">
-                <h1 className="signup-header">Sign up for free to start listening.</h1>
-                <br />
+                <p className="signup-header"><strong>Sign up for free to start listening.</strong></p>
                 {this.renderErrors()}
                 <button className="demo-login-button" onClick={this.demoLogin}>Demo User</button>
                 <div className="or-div"> <hr /> <span id="or-span"> OR </span> <hr /> </div>
@@ -126,8 +125,7 @@ class SessionForm extends React.Component {
     loginContent() {
         return (
             <div className="session-container">
-                <h1 className="login-header">To continue, log in to Kernify</h1>
-                <br />
+                <p className="login-header"><strong>To continue, log in to Kernify</strong></p>
                 {this.renderErrors()}
                 <button className="demo-login-button" onClick={this.demoLogin}>Demo User</button>
                 <div className="or-div"> <hr /> <span id="or-span"> OR </span> <hr /> </div>
@@ -156,7 +154,10 @@ class SessionForm extends React.Component {
     // setup form switching ternary logic
     render(){
         return(
-            (this.props.formType === "login") ? this.loginContent() : this.signUpContent()
+            <>
+                <img className="login-signup-logo" src="https://kernify-seed.s3.us-west-1.amazonaws.com/kernify_logo.png" alt="Kernify Logo" />
+                {(this.props.formType === "login") ? this.loginContent() : this.signUpContent()}
+            </>
         )
     }
 

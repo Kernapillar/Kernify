@@ -11,6 +11,19 @@
     max-width: 450px;
     flex-direction: column;
 }
+.login-signup-logo {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.signup-header, .login-header {
+    margin-top: 50px;
+    font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 #or-span {
     padding-left: 5px;
@@ -74,4 +87,15 @@ hr {
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+.session-errors-list {
+    display: flex;
+    justify-content: center;
+}
+
+.session-error-item {
+    background-color: rgba(255, 0, 0, .3);
+    padding: 5px;
+    border-radius: 4px;
+    font-size: x-large;
 }
