@@ -21,10 +21,7 @@ const AudioPlayer = (props) => {
             setDuration(audio.duration);
             setCurrentTime(audio.currentTime);
         }
-        setCurrentTrack(props.playing)
-
-        
-
+        console.log("TRACK" , currentTrack)
         const updateTime = () => setCurrentTime(audio.currentTime);
 
         audio.addEventListener("loadeddata", AudioData);
@@ -46,9 +43,11 @@ const AudioPlayer = (props) => {
             audio.removeEventListener("timeupdate", updateTime);
             // console.log("return hit")
         }
-    }), [progressBar];
+    });
 
-    
+    useEffect(() => {
+        setCurrentTrack(props.playing);
+    }, [props.playing])
 
     const currentTimeCalc = (secs) => {
         const minutes = Math.floor(secs/60);
@@ -72,8 +71,6 @@ const AudioPlayer = (props) => {
             console.log("dragged", progressBar.current.value)
             audioPlayer.current.currentTime = progressBar.current.value;
         }
-        // progressBar.current.style.setProperty('--progress-bar-left', `${progressBar.current.value/audioPlayer.current.duration*100}%`)
-        // setCurrentTime(progressBar.current.value)
     }
 
     const clickChange = (e) => {
@@ -96,14 +93,12 @@ const AudioPlayer = (props) => {
     }
 
     const nextTrack = () => {
-        console.log("before",currentTrack)
-        setIsPlaying(false)
         
         if (currentTrack === props.player.length - 1) {
             setCurrentTrack(0)
         } else {
+            
             setCurrentTrack(currentTrack + 1)
-            console.log("After change?")
         }
         console.log("after",currentTrack)
     }
