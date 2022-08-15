@@ -23,7 +23,7 @@ const UserDropdown = (props) => {
 
         <div className="dropdown-container" ref={container}>
             <button className="dropdown-button" onClick={() => setOpen(!open)}>
-                {props.button}
+                {props.button} { open ? <span class="material-symbols-outlined">expand_less</span> : <span class="material-symbols-outlined">expand_more</span>}
             </button>
 
             {open ? (
