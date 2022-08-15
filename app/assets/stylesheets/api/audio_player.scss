@@ -15,11 +15,21 @@
 .current-track-info {
     width: 400px;
 }
-.volume {
-    width: 400px;
+.volume-controls {
     display: flex;
-    justify-content: right;
+    align-items: center;
+    padding-right: 40px;
+    .material-symbols-outlined {
+        color: rgb(142, 142, 142);
+    }
 }
+
+.volume-mute {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
 .control-top {
     display: flex;
     justify-content: center;
@@ -43,6 +53,19 @@
     background-color: grey;
     --progress-bar-left: 0
 }
+.volume {
+    appearance: none;
+    border-radius: 10px;
+    position: relative;
+    width: 100px;
+    height: 5px;
+    outline: none;
+    background-color: grey;
+    --progress-bar-left: 0
+}
+
+
+
 .progressBar::before {
     content: '';   
     height: 10px;

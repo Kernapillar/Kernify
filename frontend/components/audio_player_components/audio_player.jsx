@@ -7,15 +7,18 @@ const AudioPlayer = (props) => {
     const [currentTime, setCurrentTime] = useState();
     const [isPlaying, setIsPlaying] = useState(false);
     const [currentTrack, setCurrentTrack] = useState(0);
+    const [volume, setVolume] = useState(0.8)
+    const [prevVolume, setPrevVolume] = useState(80)
 
     const progressBar = useRef();
     const audioPlayer = useRef();
     const animationRef = useRef();
+    const volumeSlider = useRef();
     
     
     useEffect(() => {    
         const audio = document.getElementById("audioPlayer");
-        
+        audio.volume = volume
         const AudioData = () => {
             setDuration(audio.duration);
             setCurrentTime(audio.currentTime);
@@ -71,6 +74,17 @@ const AudioPlayer = (props) => {
         progressBar.current.value = currentTime
     }
 
+    const muteToggle = () => {
+        if (volumeSlider.current.value != 0) {
+            const temp = volumeSlider.current.value
+            setPrevVolume(temp)
+            setVolume(0) 
+            volumeSlider.current.value = 0
+        } else {
+            setVolume(prevVolume/100)
+            volumeSlider.current.value = prevVolume
+        }
+    }
     
 
     const prevTrack = () => {
@@ -130,7 +144,7 @@ const AudioPlayer = (props) => {
                     {/* progress bar */}
                     <div>
                         <input type="range" ref={progressBar} onChange={changeRange} onClick={clickChange} max={duration} className="progressBar"/>
-                        {/* <input type="range" ref={progressBar}  onClick={clickChange} max={duration} className="progressBar"/> */}
+                        
                     </div>
             
                     {/* duration */}
@@ -141,8 +155,13 @@ const AudioPlayer = (props) => {
 
             </div>
 
-            <div className="volume">
-                <p>volume</p>
+            <div className="volume-controls"> 
+            <div className="volume-mute" onClick={muteToggle}>
+                {volume === 0 ? <span className="material-symbols-outlined">volume_off</span>  :
+                <span className="material-symbols-outlined">volume_up</span>
+                }
+            </div>
+                <input type="range" ref={volumeSlider} className="volume" defaultValue={80} min={0} max={100}  onChange={(e) => setVolume(e.target.value/100)} />
             </div>
 
         </div>
