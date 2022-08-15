@@ -66,7 +66,6 @@ const AudioPlayer = (props) => {
     }
 
     const clickChange = (e) => {
-        console.log(e)
         let clickedX = (e.pageX - progressBar.current.offsetLeft) / progressBar.current.offsetWidth;
         audioPlayer.current.currentTime = (clickedX * duration);
         progressBar.current.value = currentTime
@@ -75,8 +74,12 @@ const AudioPlayer = (props) => {
     
 
     const prevTrack = () => {
+        if (currentTime > 3) {
+            audioPlayer.current.currentTime = 0
+            return
+        }
         if (currentTrack === 0) {
-            setCurrentTrack(props.player.length - 1)
+            setCurrentTrack(props.player.length - 2)
         } else {
             setCurrentTrack(currentTrack - 1)
             
@@ -85,7 +88,7 @@ const AudioPlayer = (props) => {
 
     const nextTrack = () => {
         
-        if (currentTrack === props.player.length - 1) {
+        if (currentTrack === props.player.length - 2) {
             setCurrentTrack(0)
         } else {
             
