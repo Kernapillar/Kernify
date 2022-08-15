@@ -23,6 +23,10 @@
 .control-top {
     display: flex;
     justify-content: center;
+    .material-symbols-outlined {
+        font-size: 50px;
+        cursor: pointer;
+    }
 }
 .control-bottom {
     display: flex;
@@ -33,7 +37,7 @@
     appearance: none;
     border-radius: 10px;
     position: relative;
-    width: 100%;
+    width: 400px;
     height: 10px;
     outline: none;
     background-color: grey;
