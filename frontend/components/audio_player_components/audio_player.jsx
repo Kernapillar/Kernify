@@ -14,14 +14,12 @@ const AudioPlayer = (props) => {
     
     
     useEffect(() => {    
-        // console.log("currentTime" , currentTime)
         const audio = document.getElementById("audioPlayer");
         
         const AudioData = () => {
             setDuration(audio.duration);
             setCurrentTime(audio.currentTime);
         }
-        console.log("TRACK" , currentTrack)
         const updateTime = () => setCurrentTime(audio.currentTime);
 
         audio.addEventListener("loadeddata", AudioData);
@@ -30,18 +28,13 @@ const AudioPlayer = (props) => {
         isPlaying ? audio.play() : audio.pause();
         isPlaying ? animationRef.current = requestAnimationFrame(nowPlaying) : cancelAnimationFrame(animationRef.current)
 
-        // console.log("CurrentTime", Math.floor(audioPlayer.current.currentTime))
-        // console.log("Duration", Math.floor(duration))
-
         if (Math.floor(audioPlayer.current.currentTime) === Math.floor(duration)) {
-            console.log("ENDED")
             nextTrack()
         }
 
         return () => {
             audio.removeEventListener("loadeddata", AudioData);
             audio.removeEventListener("timeupdate", updateTime);
-            // console.log("return hit")
         }
     });
 
@@ -68,7 +61,6 @@ const AudioPlayer = (props) => {
 
     const changeRange = (e) => {
         if (e.type === "change"){
-            console.log("dragged", progressBar.current.value)
             audioPlayer.current.currentTime = progressBar.current.value;
         }
     }
@@ -77,7 +69,6 @@ const AudioPlayer = (props) => {
         console.log(e)
         let clickedX = (e.pageX - progressBar.current.offsetLeft) / progressBar.current.offsetWidth;
         audioPlayer.current.currentTime = (clickedX * duration);
-        console.log("CLICKED", currentTime )
         progressBar.current.value = currentTime
     }
 
@@ -100,7 +91,6 @@ const AudioPlayer = (props) => {
             
             setCurrentTrack(currentTrack + 1)
         }
-        console.log("after",currentTrack)
     }
 
 
