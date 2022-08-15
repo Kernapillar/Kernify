@@ -10,14 +10,17 @@ import { withRouter } from "react-router-dom";
 const mSTP = (state, ownProps) => {
     // check to see if trackType is playlist
     let playlists;
-    
-    if (ownProps.location.pathname.includes("playlist")) {playlists = Object.values(state.entities.playlists).filter(playlist => playlist.id != ownProps.match.params.playlistId) } 
-    else {
+    let currentPlaylistOwner = null;
+    if (ownProps.location.pathname.includes("playlist")) {
+        playlists = Object.values(state.entities.playlists).filter(playlist => playlist.id != ownProps.match.params.playlistId) 
+        currentPlaylistOwner = state.entities.playlists[ownProps.match.params.playlistId].user_id
+    } else {
        playlists =  Object.values(state.entities.playlists)
     }
     return ({
         playlists: playlists,
-        currentUser: state.session.id
+        currentUser: state.session.id,
+        currentPlaylistOwner
 
     })
 }

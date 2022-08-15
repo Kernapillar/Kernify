@@ -21,7 +21,7 @@ const TrackDropdown = (props) => {
             document.removeEventListener("click", clickOutside);
         };
     });
-
+    console.log(props)
     return (
 
         <div className="dropdown-container" ref={container}>
@@ -36,7 +36,7 @@ const TrackDropdown = (props) => {
                         <li className="dropdown-item"> <Link to={`/albums/${props.album}`}> go to album </Link> </li>
                         <li><hr /></li>
                         <li className="dropdown-item"> <PlaylistDropdown playlists={props.playlists} currentUser={props.currentUser} track={props.track} createPlaylistItem={props.createPlaylistItem}/>    </li> 
-                        {(props.trackType === "playlist") ? <li className="dropdown-item"
+                        {(props.trackType === "playlist" && props.currentUser === props.currentPlaylistOwner) ? <li className="dropdown-item"
                         onClick={()=>{props.deletePlaylistItem(props.track.playlistItem.id)}}> remove from playlist</li>  : null}
                     </ul>
                 </div>
