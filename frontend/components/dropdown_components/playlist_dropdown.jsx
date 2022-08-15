@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 
 const PlaylistDropdown = (props) => {
@@ -31,7 +32,9 @@ const PlaylistDropdown = (props) => {
             {open ? (
                 <div className="playlist-dropdown-wrapper">
                     <ul>
-                        {props.playlists.map(playlist => <li 
+                        <li className="dropdown-item"> <Link to="/playlists/create"> Create playlist </Link> </li>
+                        <li><hr /></li>
+                        {props.playlists.filter(plist => plist.user_id === props.currentUser).map(playlist => <li 
                         onClick={() => props.createPlaylistItem({playlist_id: playlist.id, track_id: props.track.id })} key={playlist.id} 
                         className="dropdown-item"> {playlist.name} </li> )}
                     </ul>

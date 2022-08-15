@@ -16,8 +16,9 @@ const mSTP = (state, ownProps) => {
        playlists =  Object.values(state.entities.playlists)
     }
     return ({
-        playlists: playlists
-        
+        playlists: playlists,
+        currentUser: state.session.id
+
     })
 }
 

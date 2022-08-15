@@ -35,7 +35,7 @@ const TrackDropdown = (props) => {
                         <li className="dropdown-item"> <Link to={`/artists/${props.artist}`}> go to artist </Link></li>
                         <li className="dropdown-item"> <Link to={`/albums/${props.album}`}> go to album </Link> </li>
                         <li><hr /></li>
-                        <li className="dropdown-item"> <PlaylistDropdown playlists={props.playlists} track={props.track} createPlaylistItem={props.createPlaylistItem}/>    </li> 
+                        <li className="dropdown-item"> <PlaylistDropdown playlists={props.playlists} currentUser={props.currentUser} track={props.track} createPlaylistItem={props.createPlaylistItem}/>    </li> 
                         {(props.trackType === "playlist") ? <li className="dropdown-item"
                         onClick={()=>{props.deletePlaylistItem(props.track.playlistItem.id)}}> remove from playlist</li>  : null}
                     </ul>
