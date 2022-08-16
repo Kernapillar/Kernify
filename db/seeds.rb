@@ -165,21 +165,14 @@ track34 = Track.create(name: "Shine On You Crazy Diamond (Parts VI - IX)", durat
 
 # Playlist Seeds
 
-playlist1 = Playlist.create(name: "testPlaylist1", description: "idk lets see if it works", user_id: 1)
-    playlist_file1 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/cat_smile.jpg')
-    playlist1.picture_url.attach(io: playlist_file1, filename: 'cat_smile.jpg')
-
-playlist2 = Playlist.create(name: "Yellow Mild Banana Peppers", description: "not super loud peppers", user_id: 1)
-    playlist_file2 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/cat_vader.jpg')
-    playlist2.picture_url.attach(io: playlist_file2, filename: 'cat_vader.jpg')
-
-playlist3 = Playlist.create(name: "instrumental", description: "its got no words", user_id: 1)
-    playlist_file3 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/stick.jpg')
-    playlist3.picture_url.attach(io: playlist_file3, filename: 'stick.jpg')
-
-playlist4 = Playlist.create(name: "The Ones With Sound", description: "I hope ", user_id: admin_user.id)
-    playlist_file4 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/gecko.jpg')
-    playlist4.picture_url.attach(io: playlist_file4, filename: 'gecko.jpg')
+playlist1 = Playlist.create(name: "testPlaylist1", description: "idk lets see if it works", color_1: "red", color_2: "blue" ,user_id: 1)
+    
+playlist2 = Playlist.create(name: "Yellow Mild Banana Peppers", description: "not super loud peppers", color_1: "red", color_2: "blue" ,user_id: 1)
+    
+playlist3 = Playlist.create(name: "instrumental", description: "its got no words", color_1: "red", color_2: "blue" ,user_id: 1)
+ 
+playlist4 = Playlist.create(name: "The Ones With Sound", description: "I hope ", color_1: "red", color_2: "blue" ,user_id: admin_user.id)
+   
 
 # Playlist Item Seeds
 

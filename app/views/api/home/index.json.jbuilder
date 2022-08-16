@@ -24,10 +24,7 @@ end
 json.playlists do 
     @all[2].each do |playlist|
         json.set! playlist.id do 
-            json.extract! playlist, :id, :name, :description, :user_id
-            if playlist.picture_url.attached? 
-                json.pictureUrl url_for(playlist.picture_url)
-            end
+            json.extract! playlist, :id, :name, :description, :user_id, :color_1, :color_2
             json.user playlist.user.username
         end
     end

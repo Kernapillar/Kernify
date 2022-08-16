@@ -9,5 +9,5 @@ class Playlist < ApplicationRecord
 
     belongs_to :user
 
-    has_one_attached :picture_url
+    # has_one_attached :picture_url
 end
