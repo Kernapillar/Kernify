@@ -9,7 +9,9 @@ const mSTP = (state) => {
     return ({
         playlist: {name: "", 
         description: "", 
-        user_id: state.session.id}, 
+        user_id: state.session.id, 
+        color_1: "black",
+        color_2: "grey"}, 
         formType: "Create Playlist"
     })
 }

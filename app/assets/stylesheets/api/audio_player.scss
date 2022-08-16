@@ -15,6 +15,7 @@
 .current-track-info {
     width: 400px;
 }
+
 .volume-controls {
     display: flex;
     align-items: center;
@@ -38,6 +39,7 @@
         cursor: pointer;
     }
 }
+
 .control-bottom {
     display: flex;
     
@@ -49,10 +51,13 @@
     position: relative;
     width: 400px;
     height: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     outline: none;
     background-color: grey;
     --progress-bar-left: 0
 }
+
 .volume {
     appearance: none;
     border-radius: 10px;
@@ -63,8 +68,6 @@
     background-color: grey;
     --progress-bar-left: 0
 }
-
-
 
 .progressBar::before {
     content: '';   
@@ -78,6 +81,7 @@
     border-radius: 10px;
 
 }
+
 .progressBar::-webkit-slider-thumb {
     
     appearance: none;

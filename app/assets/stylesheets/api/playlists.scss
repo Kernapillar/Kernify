@@ -5,7 +5,7 @@
 
 .playlist-form-container {
     // background-color: red;
-    width: 30%;
+    width: 45%;
    label{
     display: flex;
     justify-content: right;
@@ -14,10 +14,37 @@
    
 }
 
+.playlist-form-left {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.color-selectors {
+    display: flex;
+    justify-content: space-evenly;
+    label {
+        display: flex;
+        flex-direction: column;
+        select{
+            background-color: black;
+            color: white;
+        }
+    }
+}
+
+.playlist-form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+
 .text-input {
     width: 475px;
     padding-left: 0px;
     background-color: rgb(63, 63, 63);
+    margin-bottom: 15px;
 }
 .text-input::placeholder {
     width: 475px;
