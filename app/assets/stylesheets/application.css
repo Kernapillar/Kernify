@@ -15,6 +15,7 @@
  *= require api/home_content
  *= require api/users
  *= require api/card
+ *= require api/playlists
  *= require api/tracks
  *= require api/dropdown
  *= require api/audio_player

@@ -1,3 +1,26 @@
 // Place all the styles related to the api/playlists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.playlist-form-container {
+    // background-color: red;
+    width: 30%;
+   label{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+   }
+   
+}
+
+.text-input {
+    width: 475px;
+    padding-left: 0px;
+    background-color: rgb(63, 63, 63);
+}
+.text-input::placeholder {
+    width: 475px;
+    padding-left: 0px;
+    color: rgb(176, 176, 176);
+}

@@ -7,6 +7,10 @@ class PlaylistForm extends React.Component {
         this.state = this.props.playlist;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+    componentDidMount() {
+        window.scrollTo(0, 0)
+
+    }
 
     handleSubmit(e){
         e.preventDefault();
@@ -23,17 +27,20 @@ class PlaylistForm extends React.Component {
     render(){
         return(
             <>
+            <div className="playlist-form-container">
+
                 <h1>{this.props.formType}</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Name
-                        <input className="text-input" type="text" value={this.state.name} onChange={this.update('name')} />
-                    </label>
-                    <label>Description
-                        <input type="text" className="text-input" value={this.state.description} onChange={this.update('description')} />
-                    </label>
-
+                    <input className="text-input" placeholder="Playlist Name" type="text" value={this.state.name} onChange={this.update('name')} />
+                    <br />
+                    
+                        <textarea className="text-input description" placeholder="Optional Description" value={this.state.description} onChange={this.update('description')} />
+                    
+                    <br />
                     <button type="submit">{this.props.formType}</button>
                 </form>
+
+            </div>
 
             </>
         )
@@ -41,5 +48,4 @@ class PlaylistForm extends React.Component {
 
 
 }
-
 export default PlaylistForm;

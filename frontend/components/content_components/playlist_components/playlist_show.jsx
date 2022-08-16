@@ -19,7 +19,6 @@ class PlaylistShow extends React.Component {
     }
 
     render() {
-        // console.log("playlistShowprops", this.props) 
         if (!this.props.playlist) {
             return null
         } else {
