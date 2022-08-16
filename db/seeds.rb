@@ -167,11 +167,11 @@ track34 = Track.create(name: "Shine On You Crazy Diamond (Parts VI - IX)", durat
 
 playlist1 = Playlist.create(name: "testPlaylist1", description: "idk lets see if it works", color_1: "red", color_2: "blue" ,user_id: 1)
     
-playlist2 = Playlist.create(name: "Yellow Mild Banana Peppers", description: "not super loud peppers", color_1: "red", color_2: "blue" ,user_id: 1)
+playlist2 = Playlist.create(name: "Yellow Mild Banana Peppers", description: "not super loud peppers", color_1: "green", color_2: "yellow" ,user_id: 1)
     
-playlist3 = Playlist.create(name: "instrumental", description: "its got no words", color_1: "red", color_2: "blue" ,user_id: 1)
+playlist3 = Playlist.create(name: "instrumental", description: "its got no words", color_1: "purple", color_2: "orange" ,user_id: 1)
  
-playlist4 = Playlist.create(name: "The Ones With Sound", description: "I hope ", color_1: "red", color_2: "blue" ,user_id: admin_user.id)
+playlist4 = Playlist.create(name: "The Ones With Sound", description: "I hope ", color_1: "black", color_2: "blue" ,user_id: admin_user.id)
    
 
 # Playlist Item Seeds

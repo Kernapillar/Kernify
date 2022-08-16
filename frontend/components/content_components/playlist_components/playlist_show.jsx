@@ -18,14 +18,24 @@ class PlaylistShow extends React.Component {
         }
     }
 
+
+
+
+
     render() {
         if (!this.props.playlist) {
             return null
         } else {
+            let cardStyle = {
+                '--color-1': `${this.props.playlist.color_1}`, 
+                '--color-2': `${this.props.playlist.color_2}`
+                }
             return (
                 <>
                     <h1>{this.props.playlist.name}</h1>
-                    <img className="card-picture show-picture" src={ this.props.playlist.pictureUrl ? this.props.playlist.pictureUrl : dark_side} alt="card picure" />
+                    <div className="card-picture playlist-card" style={cardStyle}>
+                        <span className="material-symbols-outlined">queue_music</span>
+                    </div>
                     <div><p>{this.props.playlist.description}</p></div>
                     <div className='playlist-options' >
                        {this.ownPlaylist()}

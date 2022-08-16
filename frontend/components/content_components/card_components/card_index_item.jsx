@@ -4,7 +4,6 @@ import dark_side from "../../../../app/assets/images/dark_side.jpeg"
 class CardIndexItem extends React.Component {
     constructor(props){
         super(props)
-        // console.log("this is what the card item props looks like",this.props.media)
     }
 
 
@@ -13,9 +12,19 @@ class CardIndexItem extends React.Component {
             return (
                 <img className="card-picture artist-card-pic" src={dark_side} alt="card picture" />
             )
-        } else {
+        } else if (this.props.cardType === "album") {
             return (
                 <img className="card-picture" src={ this.props.media.pictureUrl ? this.props.media.pictureUrl : dark_side} alt="card picure" />
+            )
+        } else {
+            let cardStyle = {
+                '--color-1': `${this.props.media.color_1}`, 
+                '--color-2': `${this.props.media.color_2}`
+            }
+            return (
+                <div className="card-picture playlist-card" style={cardStyle}>
+                    <span className="material-symbols-outlined">queue_music</span>
+                </div>
             )
         }
     }
@@ -44,7 +53,6 @@ class CardIndexItem extends React.Component {
                 </div>
             )
         } else {
-            // console.log("media peek for playlist: ", this.props)
             return (
                 <div className="card-text">
                     <p className="card-title">

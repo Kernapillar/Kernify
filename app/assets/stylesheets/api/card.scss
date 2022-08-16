@@ -45,7 +45,12 @@
     color: rgb(170, 170, 170);
 }
 
-
+.playlist-card {
+    background: linear-gradient(var(--color-1), var(--color-2)); 
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
 
 .card-picture {
     height: 185px;
@@ -53,6 +58,11 @@
     object-fit: cover;
     border-radius: 3px;
     margin-bottom: 20px;
+
+    .material-symbols-outlined {
+        font-size: 80px;
+        color: rgb(180, 180, 180);
+    }
 }
 
 .artist-card-pic {
