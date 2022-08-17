@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 
 
 const mSTP = (state) => {
-    console.log(state.entities.player)
     return ({
         player: state.entities.player, 
         tracks: state.entities.tracks, 

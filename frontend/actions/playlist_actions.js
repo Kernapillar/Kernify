@@ -35,7 +35,7 @@ const removePlaylistItem = (payload)=> ({
     tracks: payload.tracks
 })
 
-const receivePlaylistItemResponse = (res) => ({
+export const receivePlaylistItemResponse = (res) => ({
     type: RECEIVE_PLAYLIST_ITEM_RESPONSE, 
     response: res
 })

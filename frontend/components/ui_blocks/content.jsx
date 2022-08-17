@@ -10,6 +10,7 @@ import PlaylistShowContainer from "../content_components/playlist_components/pla
 import CreatePlaylistFormContainer from "../content_components/playlist_components/create_playlist_form_container"
 import UpdatePlaylistFormContainer from "../content_components/playlist_components/update_playlist_form_container"
 
+
 const Content = () => (
     <div className="content-block">
         <Switch>
@@ -23,7 +24,7 @@ const Content = () => (
             <Route exact path="/playlists/update/:playlistId" component={UpdatePlaylistFormContainer} />
             <Route exact path="/playlists/:playlistId" component={PlaylistShowContainer}/>
 
-
+            
         </Switch>
 
 

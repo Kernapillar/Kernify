@@ -23,7 +23,6 @@ const AudioPlayer = (props) => {
             setDuration(audio.duration);
             setCurrentTime(audio.currentTime);
         }
-        console.log(audioPlayer.current.currentTime)
         const updateTime = () => setCurrentTime(audio.currentTime);
 
         audio.addEventListener("loadeddata", AudioData);

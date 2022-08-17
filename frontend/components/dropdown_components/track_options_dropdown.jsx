@@ -20,7 +20,6 @@ const TrackDropdown = (props) => {
             document.removeEventListener("click", clickOutside);
         };
     });
-    console.log(props)
     return (
 
         <div className="dropdown-container" ref={container}>
