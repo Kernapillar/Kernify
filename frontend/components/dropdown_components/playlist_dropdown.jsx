@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const PlaylistDropdown = (props) => {
     
     const [open, setOpen] = useState(false);
-    const [popup, setPopup] = useState(false);
+    const [popup, setPopup] = useState(true);
     const container = useRef(null)
 
     const clickOutside = (e) => {

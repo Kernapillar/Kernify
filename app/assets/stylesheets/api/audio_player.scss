@@ -10,6 +10,8 @@
 .player-controls {
     display: flex;
     flex-direction: column;
+    position: absolute;
+    left: calc(50% - 256px);
 }
 
 .current-track-info {
