@@ -6,6 +6,8 @@ export const RECEIVE_NEW_PLAYLIST = 'RECEIVE_NEW_PLAYLIST'
 export const REMOVE_PLAYLIST = 'REMOVE_PLAYLIST';
 export const CREATE_PLAYLIST_ITEM = 'CREATE_PLAYLIST_ITEM';
 export const DELETE_PLAYLIST_ITEM = 'DELETE_PLAYLIST_ITEM';
+export const RECEIVE_PLAYLIST_ITEM_RESPONSE = "RECEIVE_PLAYLIST_ITEM_RESPONSE"
+export const CLEAR_PLAYLIST_ITEM_RESPONSE = "CLEAR_PLAYLIST_ITEM_RESPONSE"
 
 
 const receiveAllPlaylists = (playlists) => ({
@@ -31,6 +33,15 @@ const removePlaylist = (playlistId) => ({
 const removePlaylistItem = (payload)=> ({
     type: DELETE_PLAYLIST_ITEM, 
     tracks: payload.tracks
+})
+
+const receivePlaylistItemResponse = (res) => ({
+    type: RECEIVE_PLAYLIST_ITEM_RESPONSE, 
+    response: res
+})
+
+export const clearPlaylistItemResponse = () => ({
+    type: CLEAR_PLAYLIST_ITEM_RESPONSE
 })
 
 
@@ -60,10 +71,11 @@ export const deletePlaylist = (playlistId) => dispatch => {
 }
 
 export const createPlaylistItem = (playlistItem) => () => {
-    return PlaylistAPI.createPlaylistItem(playlistItem)
+    return PlaylistAPI.createPlaylistItem(playlistItem).then(res => dispatch(receivePlaylistItemResponse(res)))
 }
 
 export const deletePlaylistItem = (playlistItemId) => dispatch => {
     return PlaylistAPI.deletePlaylistItem(playlistItemId)
     .then(payload => dispatch(removePlaylistItem(payload)))
 }
+

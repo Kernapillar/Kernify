@@ -44,6 +44,3 @@ export const signup = (user) => dispatch => {
     .then(user => dispatch(receiveCurrentUser(user)), error => dispatch(receiveErrors(error.responseJSON)))
 }
 
-window.login = login
-window.logout = logout
-window.signup = signup

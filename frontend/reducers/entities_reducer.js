@@ -6,6 +6,7 @@ import tracksReducer from "./tracks_reducer";
 import playlistReducer from "./playlists_reducer";
 import playerReducer from "./player_reducer"
 import isPlayingReducer from "./is_playing_reducer";
+import responseReducer from "./responses_reducer";
 
 const entitiesReducer = combineReducers({
     users: usersReducer,
@@ -14,7 +15,8 @@ const entitiesReducer = combineReducers({
     tracks: tracksReducer, 
     playlists: playlistReducer,
     player: playerReducer, 
-    playing: isPlayingReducer
+    playing: isPlayingReducer,
+    response: responseReducer
 })
 
 
