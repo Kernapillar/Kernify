@@ -21,7 +21,6 @@ const PlaylistShowOptionsDropdown = (props) => {
     });
 
  
-    // console.log("DROPDOWN PARAMS and props", props)
     return (
 
         <div className="dropdown-container" ref={container}>

@@ -5,7 +5,6 @@ import PlaylistDropdown from "./playlist_dropdown";
 
 
 const TrackDropdown = (props) => {
-    // console.log("trackdropdownprops", props)
     const [open, setOpen] = useState(false);
     const container = useRef(null)
 

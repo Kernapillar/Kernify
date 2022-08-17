@@ -48,3 +48,12 @@ justify-content: right;
     width: max-content;
 
 }
+
+.popup {
+    position: fixed;
+    background-color: aqua;
+    padding: 50px;
+    border-radius: 50px;
+    left: 50%;
+    bottom: 200px;
+}
