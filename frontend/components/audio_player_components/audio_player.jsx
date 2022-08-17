@@ -7,7 +7,7 @@ const AudioPlayer = (props) => {
     const [currentTime, setCurrentTime] = useState();
     const [isPlaying, setIsPlaying] = useState(false);
     const [currentTrack, setCurrentTrack] = useState(0);
-    const [volume, setVolume] = useState(0.8)
+    const [volume, setVolume] = useState(0.5)
     const [prevVolume, setPrevVolume] = useState(80)
 
     const progressBar = useRef();
@@ -23,6 +23,7 @@ const AudioPlayer = (props) => {
             setDuration(audio.duration);
             setCurrentTime(audio.currentTime);
         }
+        console.log(audioPlayer.current.currentTime)
         const updateTime = () => setCurrentTime(audio.currentTime);
 
         audio.addEventListener("loadeddata", AudioData);
@@ -102,12 +103,12 @@ const AudioPlayer = (props) => {
 
     const nextTrack = () => {
         
-        if (currentTrack === props.player.length - 2) {
-            setCurrentTrack(0)
-        } else {
+        // if (currentTrack === props.player.length - 2) {
+        //     setCurrentTrack(0)
+        // } else {
             
-            setCurrentTrack(currentTrack + 1)
-        }
+        //     setCurrentTrack(currentTrack + 1)
+        // }
     }
 
 
