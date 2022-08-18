@@ -6,7 +6,7 @@ import {
 import {RECEIVE_HOME_PAGE} from "../actions/music_actions"
 
 const playlistReducer = (state = {}, action) => {
-    console.log("ACTION = ", action)
+    // console.log("ACTION = ", action)
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_ALL_PLAYLISTS:

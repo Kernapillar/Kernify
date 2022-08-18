@@ -7,7 +7,7 @@ const responseReducer = (state = [], action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_PLAYLIST_ITEM_RESPONSE:
-            console.log("ACTION", action)
+            // console.log("ACTION", action)
             if (!action.response) return [];
             return action.response;   
         case CLEAR_PLAYLIST_ITEM_RESPONSE:

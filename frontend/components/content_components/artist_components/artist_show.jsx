@@ -16,7 +16,7 @@ class ArtistShow extends React.Component {
         if (!this.props.artist || !this.props.albums) {
             return null
         } else {
-            console.log("artist show props", this.props)
+            // console.log("artist show props", this.props)
             return (
                 <>
                     <h1>{this.props.artist.name}</h1>

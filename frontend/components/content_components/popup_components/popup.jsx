@@ -8,7 +8,7 @@ const Popup = (props) => {
 
     useEffect(() => {
         props.receiveResponse();
-        console.log("RESPONSE", props.response)
+        // console.log("RESPONSE", props.response)
 
     }, [])
     
@@ -23,8 +23,7 @@ const Popup = (props) => {
 
     return (
         <>
-         <p onClick={() => console.log("RESPO", props)} className={`popup ${showing ? "popup-shown" : "popup-hidden"}`}> {`${props.response}`} </p>
-            {/* <p onClick={() => console.log("RESPO", props)} className="popup"> {`${props.response}`} </p>  */}
+         <p  className={`popup ${showing ? "popup-shown" : "popup-hidden"}`}> {`${props.response}`} </p>
             
         </>
         

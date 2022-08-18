@@ -31,7 +31,7 @@ class PlaylistForm extends React.Component {
             '--color-1': `${this.state.color_1}`, 
             '--color-2': `${this.state.color_2}`
             }
-            console.log(this.state)
+            // console.log(this.state)
         return(
             <>
             <div className="playlist-form-container">
