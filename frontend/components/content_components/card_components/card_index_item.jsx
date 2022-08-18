@@ -1,5 +1,4 @@
 import React from "react";
-import dark_side from "../../../../app/assets/images/dark_side.jpeg"
 
 class CardIndexItem extends React.Component {
     constructor(props){
@@ -10,11 +9,10 @@ class CardIndexItem extends React.Component {
     cardPicture () {
         if (this.props.cardType === "artist") {
             return (
-                <img className="card-picture artist-card-pic" src={dark_side} alt="card picture" />
-            )
+                <img className="card-picture" src={this.props.media.pictureUrl} alt="card picure" />            )
         } else if (this.props.cardType === "album") {
             return (
-                <img className="card-picture" src={ this.props.media.pictureUrl ? this.props.media.pictureUrl : dark_side} alt="card picure" />
+                <img className="card-picture" src={this.props.media.pictureUrl} alt="card picure" />
             )
         } else {
             let cardStyle = {
