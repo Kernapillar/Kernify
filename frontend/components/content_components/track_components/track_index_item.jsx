@@ -17,7 +17,9 @@ class TrackIndexItem extends React.Component {
         if (this.props.trackType === "playlist" ) {
             return <Link className="album-link-text" to={`/albums/${this.props.track.album_id}`}>
             {this.props.album}
-        </Link>
+            </Link>
+        } else if (this.props.trackType === "search" ) {
+                return this.props.album
         }
     }
 
@@ -55,9 +57,9 @@ class TrackIndexItem extends React.Component {
                     <div className="track-text">
                         <p className="track-title">{this.props.track.name}</p>
                         <p className="track-subtitle">
-                            <Link to={`/artists/${this.props.track.artist_id}`}>
+                            {this.props.trackType === "search" ? this.props.artist : <Link to={`/artists/${this.props.track.artist_id}`}>
                                 {this.props.artist}
-                            </Link>
+                            </Link>}
                         </p>
                     </div>
                 </div>

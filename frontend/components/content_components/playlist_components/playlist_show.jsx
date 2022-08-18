@@ -1,7 +1,6 @@
 import React from "react";
 import TrackIndex from "../track_components/track_index";
 import PlaylistShowOptionsDropdownContainer from "../../dropdown_components/playlist_show_options_dropdown_container";
-import dark_side from "../../../../app/assets/images/dark_side.jpeg"
 
 class PlaylistShow extends React.Component {
 

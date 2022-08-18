@@ -14,7 +14,6 @@ class HomeIndex extends React.Component {
         }
 
     render() {
-        // console.log(" home index props sending to cardindex",this.props)
         if (!this.props.albums[0] || !this.props.artists[0] || !this.props.playlists[0]) {
             return null
         } else {

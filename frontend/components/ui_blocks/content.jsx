@@ -9,12 +9,14 @@ import PlaylistIndexContainer from "../content_components/playlist_components/pl
 import PlaylistShowContainer from "../content_components/playlist_components/playlist_show_container"
 import CreatePlaylistFormContainer from "../content_components/playlist_components/create_playlist_form_container"
 import UpdatePlaylistFormContainer from "../content_components/playlist_components/update_playlist_form_container"
+import SearchContainer from "../content_components/search_components/search_container"
 
 
 const Content = () => (
     <div className="content-block">
         <Switch>
             <Route exact path="/" component={HomeIndexContainer}/>
+            <Route exact path="/search" component={SearchContainer}/>
             <Route exact path="/albums/:albumId" component={AlbumShowContainer}/>
             <Route exact path="/albums/" component={AlbumIndexContainer}/>
             <Route exact path="/artists/:artistId" component={ArtistShowContainer}/>

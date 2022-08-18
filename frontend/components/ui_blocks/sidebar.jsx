@@ -8,11 +8,17 @@ const SideBar = () => (
         <Link to="/"> <button><span className="material-symbols-outlined">home</span>
     &nbsp; Home</button></Link>
         <br />
-        <Link to="/albums"> <button><span className="material-symbols-outlined">library_music</span>
-    &nbsp; Albums</button></Link>
+
+        <Link to="/search"> <button><span className="material-symbols-outlined">search</span>
+    &nbsp; Search</button></Link>
         <br />
+
         <Link to="/artists"> <button><span className="material-symbols-outlined">person</span>
     &nbsp; Artists</button></Link>
+        <br />
+
+        <Link to="/albums"> <button><span className="material-symbols-outlined">library_music</span>
+    &nbsp; Albums</button></Link>
         <br />
         
         <Link to="/playlists"> <button><span className="material-symbols-outlined">queue_music</span>

@@ -78,3 +78,16 @@ button {
     border-radius: 100px;
     color: white;
 }
+
+#search-bar {
+    background-color: white;
+    padding: 10px;
+    border-radius: 100px;
+    width: fit-content;
+    color: black;
+    display: flex;
+    input {
+        margin-right: 20px;
+
+    }
+}

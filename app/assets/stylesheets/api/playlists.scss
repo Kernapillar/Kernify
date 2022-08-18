@@ -5,10 +5,11 @@
 
 .playlist-form-container {
     // background-color: red;
-    width: 45%;
+    width: 60%;
+    
    label{
     display: flex;
-    justify-content: right;
+    justify-content: space-around;
     align-items: center;
    }
    
@@ -17,6 +18,7 @@
 .playlist-form-left {
     display: flex;
     flex-direction: column;
+    margin-right: 15px;
     
 }
 
