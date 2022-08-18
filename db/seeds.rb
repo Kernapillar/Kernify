@@ -34,14 +34,24 @@ admin_user = User.create(username: "AlexKern", password: "123456")
 
 # artist seeds
 artist1 = Artist.create(name: "Red Hot Chili Peppers", bio: "theyre red hot")
+    artistfile1 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/rhcp_logo.jpg')
+    artist1.picture_url.attach(io: artistfile1, filename: 'rhcp_logo.jpg')
 
 artist2 = Artist.create(name: "Portugal. The Man", bio: "is it a place, a person or a band?")
+    artistfile2 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/ptm_logo.jpeg')
+    artist2.picture_url.attach(io: artistfile2, filename: 'ptm_logo.jpeg')
 
 artist3 = Artist.create(name: "Tycho", bio: "words cannot describe...")
+    artistfile3 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/tycho_logo.png')
+    artist3.picture_url.attach(io: artistfile3, filename: 'tycho_logo.png')
 
 artist4 = Artist.create(name: "Phoenix", bio: "cool and French I think?")
+    artistfile4 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/phoenix_logo.jpeg')
+    artist4.picture_url.attach(io: artistfile4, filename: 'phoenix_logo.jpeg')
 
 artist5 = Artist.create(name: "Pink Floyd", bio: "My dad liked them and now I do too")
+    artistfile5 = URI.open('https://kernify-seed.s3.us-west-1.amazonaws.com/Pink_Floyd_Logo.jpeg')
+    artist5.picture_url.attach(io: artistfile5, filename: 'Pink_Floyd_Logo.jpeg')
 
 # album seeds
 
