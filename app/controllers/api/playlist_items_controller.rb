@@ -4,9 +4,11 @@ class Api::PlaylistItemsController < ApplicationController
         @playlist_item = PlaylistItem.new(playlist_item_params)
         if @playlist_item.save
             render json: ["track added to playlist"], status: 200
-        else
-            render json:["track is already in playlist"], status: 403
+        else 
+            render json: ["track is already in playlist"], status: 200
         end
+        
+        
     end
 
 
