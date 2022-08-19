@@ -96,19 +96,19 @@ class SessionForm extends React.Component {
                     <label className="session-label"> What is your email address?
                             <br />
                             <input type="text" value={this.state.email} onChange={this.update('email')} placeholder="Enter your email address."
-                            className={'login-input text-input'} />
+                            className={'login-input'} />
                         </label>
                         <br />
                         <label className="session-label"> What should we call you?
                             <br />
                             <input type="text" value={this.state.username} placeholder="Enter a profile name."
-                            onChange={this.update('username')} className={'login-input text-input'} />
+                            onChange={this.update('username')} className={'login-input'} />
                         </label>
                         <br />
                         <label className="session-label"> Create a password
                             <br />
                             <input type="password" value={this.state.password} placeholder="Create a password."
-                            onChange={this.update('password')} className={'login-input text-input'} />
+                            onChange={this.update('password')} className={'login-input'} />
                         </label>
                         <br />
                         
@@ -133,13 +133,13 @@ class SessionForm extends React.Component {
                         <label className="session-label"> Username
                             <br />
                             <input type="text" value={this.state.username} placeholder="Enter username."
-                            onChange={this.update('username')} className={'login-input text-input'} />
+                            onChange={this.update('username')} className={'login-input'} />
                         </label>
                         <br />
                         <label className="session-label">Password 
                             <br />
                             <input type="password" value={this.state.password} placeholder="Password."
-                            onChange={this.update('password')} className={'login-input text-input'} />
+                            onChange={this.update('password')} className={'login-input'} />
                         </label>
                         <br />
                         <button type="submit" className={"session-form-submit"}>Log in</button>
