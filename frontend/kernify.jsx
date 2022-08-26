@@ -26,25 +26,7 @@ if (window.currentUser) {
     const root = document.getElementById("root");
     ReactDOM.render(<Root store={store} />, root);
     
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.fetchAllArtists = ActionTest.fetchAllArtists
-  window.fetchArtist = ActionTest.fetchArtist
-  window.fetchAllAlbums = ActionTest.fetchAllAlbums
-  window.fetchAlbum = ActionTest.fetchAlbum
-  window.fetchAllTracks = ActionTest.fetchAllTracks
-  window.fetchHome = ActionTest.fetchHome
-  window.fetchAllPlaylists = PlaylistTest.fetchAllPlaylists
-
-  window.fetchPlaylist = PlaylistTest.fetchPlaylist
-  window.createPlaylist = PlaylistTest.createPlaylist
-  window.updatePlaylist = PlaylistTest.updatePlaylist
-  window.deletePlaylist = PlaylistTest.deletePlaylist
-  window.createPlaylistItem = PlaylistTest.createPlaylistItem
-  window.deletePlaylistItem = PlaylistTest.deletePlaylistItem
   
-  window.fetchQueue = PlayerTest.fetchQueue
-  window.playTrack = PlayerTest.playTrack
 
 
 
