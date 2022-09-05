@@ -18,8 +18,7 @@ class HomeIndex extends React.Component {
             return null
         } else {
             return <>
-                <h1 className="home-welcome">Welcome to Kernify! Unfortunately my AWS is currently broken and I am working to get it fixed!  </h1>
-                <p>this is the reason for the missing pictures and audio files. Please check back later!</p>
+                <h1 className="home-welcome">Welcome to Kernify!</h1>
                 <br />
                 <span className="home-preview-header">
                     <h3>Artists</h3> <Link to="/artists"><p className="see-all">SEE ALL</p></Link> 
