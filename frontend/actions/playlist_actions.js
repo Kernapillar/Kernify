@@ -70,7 +70,7 @@ export const deletePlaylist = (playlistId) => dispatch => {
     .then(() => dispatch(removePlaylist(playlistId)))
 }
 
-export const createPlaylistItem = (playlistItem) => () => {
+export const createPlaylistItem = (playlistItem) => dispatch => {
     return PlaylistAPI.createPlaylistItem(playlistItem).then(res => dispatch(receivePlaylistItemResponse(res)), errorRes => console.log(("got to error handler", errorRes)))
 }
 
