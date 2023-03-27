@@ -41,7 +41,7 @@ class SessionForm extends React.Component {
     swapForm = () => {
         if (this.props.formType === 'signup') {
             return(
-                <div>
+                <>
                     <span className="swap-form-text">Have an account? 
                         <Link to="/login">
                             <button className="swap-form">
@@ -49,18 +49,18 @@ class SessionForm extends React.Component {
                             </button>
                         </Link>
                         </span>
-                </div>
+                </>
             )
         } else {
             return (
-                <div>
+                <>
                     <span className="swap-form-text">Don't have an account? 
                     <Link to="/signup"> 
                         <button className="swap-form">
                         Sign up for Kernify
                         </button> 
                     </Link></span>
-                </div>
+                </>
             )
         }
     }
@@ -127,7 +127,7 @@ class SessionForm extends React.Component {
             <div className="session-container">
                 <p className="login-header"><strong>To continue, log in to Kernify</strong></p>
                 {this.renderErrors()}
-                <button className="demo-login-button" onClick={this.demoLogin}>Demo User</button>
+                <button className="demo-login-button" onClick={this.demoLogin}>Continue as Demo User</button>
                 <div className="or-div"> <hr /> <span id="or-span"> OR </span> <hr /> </div>
                     <form className="session-form-box" onSubmit={this.handleSubmit}>
                         <label className="session-label"> Username

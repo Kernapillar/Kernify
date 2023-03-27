@@ -97,7 +97,8 @@ hr {
 .swap-form {
     border: 1px solid grey;
     background-color: white;
-    padding: 10px 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
     color: grey;
     height: 40px;
@@ -109,7 +110,7 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 98%;
 }
 .swap-form-text a {
     width: 100%;
