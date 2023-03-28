@@ -156,6 +156,7 @@ class SessionForm extends React.Component {
         return(
             <>
                 <img className="login-signup-logo" src="https://kernify-seed.s3.us-west-1.amazonaws.com/kernify_logo.png" alt="Kernify Logo" />
+                <hr />
                 {(this.props.formType === "login") ? this.loginContent() : this.signUpContent()}
             </>
         )
