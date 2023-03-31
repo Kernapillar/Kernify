@@ -7,7 +7,7 @@ const AudioPlayer = (props) => {
     const [duration, setDuration] = useState();
     const [currentTime, setCurrentTime] = useState();
     const [isPlaying, setIsPlaying] = useState(false);
-    const [currentTrack, setCurrentTrack] = useState(0);
+    const [currentTrack, setCurrentTrack] = useState(-1);
     const [volume, setVolume] = useState(0.5)
     const [prevVolume, setPrevVolume] = useState(80)
 
@@ -44,7 +44,7 @@ const AudioPlayer = (props) => {
 
     useEffect(() => {
         setCurrentTrack(props.playing);
-        if (props.playing) setIsPlaying(true)
+        if (props.playing !== null) setIsPlaying(true)
     }, [props.playing])
 
     const currentTimeCalc = (secs) => {
