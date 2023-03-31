@@ -9,7 +9,7 @@ const playerReducer = (state = [], action) => {
         case RECEIVE_QUEUE:
             return Object.values(action.tracks)
         case SET_CURRENT_TRACK:
-            nextState.push(action.track)
+            // nextState.push(action.track)
             return nextState
         default:
             return state;

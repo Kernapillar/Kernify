@@ -93,7 +93,7 @@ const AudioPlayer = (props) => {
             return
         }
         if (currentTrack === 0) {
-            setCurrentTrack(props.player.length - 2)
+            setCurrentTrack(props.player.length - 1)
         } else {
             setCurrentTrack(currentTrack - 1)
             
@@ -101,8 +101,8 @@ const AudioPlayer = (props) => {
     }
 
     const nextTrack = () => {
-        
-        if (currentTrack === props.player.length - 2) {
+        console.log(currentTrack, props.player)
+        if (currentTrack === props.player.length - 1) {
             setCurrentTrack(0)
         } else {
             
