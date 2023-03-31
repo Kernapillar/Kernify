@@ -41,6 +41,7 @@ const stopPlaying = () => {
 
 
 export const playTrack = (trackId) => (dispatch) => {
+    console.log(trackId)
     dispatch(setCurrentTrack(trackId))
 }
 

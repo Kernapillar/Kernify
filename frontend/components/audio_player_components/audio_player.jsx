@@ -3,6 +3,7 @@ import {useState, useEffect, useRef} from "react";
 
 
 const AudioPlayer = (props) => {
+    // console.log('AudioPlayer Props', props)
     const [duration, setDuration] = useState();
     const [currentTime, setCurrentTime] = useState();
     const [isPlaying, setIsPlaying] = useState(false);
@@ -43,6 +44,7 @@ const AudioPlayer = (props) => {
 
     useEffect(() => {
         setCurrentTrack(props.playing);
+        if (props.playing) setIsPlaying(true)
     }, [props.playing])
 
     const currentTimeCalc = (secs) => {
