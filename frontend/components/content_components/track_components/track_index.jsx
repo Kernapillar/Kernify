@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 class TrackIndex extends React.Component {
 
     trackTypeCheck = () => {
-        // console.log("Found track type check! props: ", this.props)
         if (this.props.trackType === "playlist") {
             return this.props.tracks.map((track, index) => <TrackIndexItem fetchQueue={this.props.fetchQueue} playTrack={this.props.playTrack} tracksObject={this.props.tracks} key={track.id} artist={track.artist} trackType="playlist" album={track.album} track={track} position={index} />)
         } else if  (this.props.trackType === "search") {
@@ -28,8 +27,6 @@ class TrackIndex extends React.Component {
         if (!this.props.tracks) {
             return null 
         } else {
-            // console.log("made it to tracks", this.props)
-
         return (
             <ul className="track-list-container">
                 <div className="track-header">

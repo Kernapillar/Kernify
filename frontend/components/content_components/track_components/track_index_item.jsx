@@ -42,7 +42,6 @@ class TrackIndexItem extends React.Component {
 
     
     render(){
-        // console.log("trackIndexItem props for album", this.props)
         return (
             <li className="track-item" 
             onMouseOver={this.onMouseEnterHandler} 

@@ -9,7 +9,6 @@ import {
 const artistsReducer = (state = {}, action) => {
     Object.freeze(state);
     // const nextState = Object.assign({}, state)
-    // console.log(action)
     const nextState = {};
     switch (action.type) {
         case RECEIVE_ALL_ARTISTS:

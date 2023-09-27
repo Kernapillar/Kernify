@@ -23,7 +23,6 @@ class EditPlaylistForm extends React.Component {
 }
 
 const mSTP = (state, ownProps) => {
-    // console.log(state, ownProps)
     return ({
         playlist: state.entities.playlists[ownProps.match.params.playlistId], 
         formType: "Update Playlist",
