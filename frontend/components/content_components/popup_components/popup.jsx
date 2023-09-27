@@ -8,7 +8,6 @@ const Popup = (props) => {
 
     useEffect(() => {
         props.receiveResponse();
-        // console.log("RESPONSE", props.response)
 
     }, [])
     

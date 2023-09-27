@@ -13,7 +13,6 @@ class AlbumShow extends React.Component {
         if (!this.props.tracks || !this.props.album) {
             return null
         } else {
-            console.log(this.props)
             return (
                 <>
                     <h1>{this.props.album.name}</h1>  

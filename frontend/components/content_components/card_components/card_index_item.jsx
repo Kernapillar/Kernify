@@ -67,7 +67,6 @@ class CardIndexItem extends React.Component {
     
 
     render() {
-        // console.log("Card index item props", this.props)
         if (!this.props.media) {
             return null
         } else {

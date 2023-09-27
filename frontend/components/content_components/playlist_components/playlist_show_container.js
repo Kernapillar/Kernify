@@ -6,7 +6,6 @@ import { fetchQueue, playTrack } from "../../../actions/player_actions";
 
 
 const mSTP = (state, ownProps) => {
-    // console.log("state = ",state)
     return ({
         currentUser: state.session.id,
         tracks: Object.values(state.entities.tracks), 

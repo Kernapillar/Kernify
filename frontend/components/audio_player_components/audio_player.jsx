@@ -3,7 +3,6 @@ import {useState, useEffect, useRef} from "react";
 
 
 const AudioPlayer = (props) => {
-    // console.log('AudioPlayer Props', props)
     const [duration, setDuration] = useState();
     const [currentTime, setCurrentTime] = useState();
     const [isPlaying, setIsPlaying] = useState(false);
@@ -103,7 +102,6 @@ const AudioPlayer = (props) => {
     }
 
     const nextTrack = () => {
-        console.log(currentTrack, props.player)
         if (currentTrack === props.player.length - 1) {
             setCurrentTrack(0)
         } else {
