@@ -1,4 +1,4 @@
-# 4 Kernify - Alex Kern 
+# Kernify - Alex Kern 
 
 ![kernify_screenshot](https://user-images.githubusercontent.com/103587019/185811930-99072c6e-0f8a-495d-8944-6d9d322af575.jpg)
 
