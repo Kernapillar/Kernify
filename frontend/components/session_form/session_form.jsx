@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
+        console.log(props)
         this.state = {
             username: "", 
             password: "", 
@@ -127,7 +128,7 @@ class SessionForm extends React.Component {
             <div className="session-container">
                 <p className="login-header"><strong>To continue, log in to Kernify</strong></p>
                 {this.renderErrors()}
-                <button className="demo-login-button" onClick={this.demoLogin}>Continue as Demo User</button>
+                <button className="demo-login-button" onClick={this.demoLogin}>Demo User</button>
                 <div className="or-div"> <hr /> <span id="or-span"> OR </span> <hr /> </div>
                     <form className="session-form-box" onSubmit={this.handleSubmit}>
                         <label className="session-label"> Username
